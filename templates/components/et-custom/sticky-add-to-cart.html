@@ -3,7 +3,14 @@
         <div class="et-sticky-addto-cart">
             <div class="et-prod-info">
                 {{#if product.main_image}}
-                    <img src="{{getImageSrcset product.main_image (cdn theme_settings.default_image_product) 1x=theme_settings.sticky_product_size}}" alt="">
+                    {{> components/common/responsive-img
+                        image=product.main_image
+                        class="productView-image--default"
+                        fallback_size=theme_settings.product_size
+                        lazyload=theme_settings.lazyload_mode
+                        default_image=theme_settings.default_image_product
+                        otherAttributes="data-main-image"
+                    }}
                 {{/if}}
                 <h1 class="productView-title">{{product.title}}</h1>
                 {{#if product.call_for_price}}
@@ -49,7 +56,6 @@
                         {{/or}}
                     </div>
                 </form>
-                <a href="https://wa.me/97466152971?text=I%20want%20to%20order.%0AProduct%20Name%3A%20{{product.title}}%0ASKU%3A%20{{product.sku}}%0AProduct%20URL%3A%20{{product.url}}" class="order-on-whatsapp" target="_blank"><span>Order on whatsApp</span><i class="ms-whatsapp"></i></a>
             </div>
         </div>
     </div>
