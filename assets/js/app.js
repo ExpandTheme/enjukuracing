@@ -402,34 +402,6 @@ buttonMinus.on("click", function(){
     }
 });
 
-$('[data-ajax-cart]').on("click", function(event){
-    event.preventDefault();
-    $(this).addClass("active");
-    var form = $(this).parent().parent();
-    var url = form.attr('action');
-    $.ajax({
-        type: "POST",
-        url: url,
-        data: form.serialize(),
-        success: function(data) {
-            fetch('/api/storefront/cart', {
-                credentials: 'include'
-            }).then(function(response) {
-                return response.json();
-            }).then(function(data) {
-                var num = 0;
-                for (let i = 0; i < data[0].lineItems.physicalItems.length; i++) {
-                    num += data[0].lineItems.physicalItems[i].quantity;
-                };
-                $('.et-ajax-cart-button').removeClass("active");
-                $('.cart-quantity').addClass("countPill--positive");
-                $(".cart-quantity").html(num);
-                //console.log(data);
-            });
-        },
-        error: function(data) {}
-    });
-});
 
 $('[data-ajax-cart]').on("click", function(event){
     event.preventDefault();
