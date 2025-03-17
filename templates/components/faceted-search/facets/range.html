@@ -1,0 +1,7 @@
+<div class="accordion-block">
+    {{> components/faceted-search/faceted-search-navigation}}
+
+    <div id="facetedSearch-content--{{dashcase facet}}" class="accordion-content{{#unless start_collapsed}} is-open{{/unless}}">
+        {{> components/faceted-search/range-form}}
+    </div>
+</div>

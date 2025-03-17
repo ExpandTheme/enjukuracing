@@ -1,0 +1,23 @@
+.et-productView {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    background-color: #fff;
+    margin-bottom: 0;
+    padding: 30px 30px 0 30px;
+    gap: 30px;
+}
+.et-productView-thumbnail {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 10px;
+    margin-top: 10px;
+    li{
+        a.productView-thumbnail-link{
+            margin: 0;
+            padding: 0;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+<ul class="tabs" data-tab>
+    {{#if product.description}}
+        <li class="tab is-active">
+            <a class="tab-title" href="#tab-description">{{lang 'products.description'}}</a>
+        </li>
+    {{/if}}
+    {{#if product.warranty}}
+        <li class="tab {{#unless product.description}}is-active{{/unless}}">
+            <a class="tab-title" href="#tab-warranty">{{lang 'products.warranty'}}</a>
+        </li>
+    {{/if}}
+    {{#all product.custom_fields theme_settings.show_custom_fields_tabs}}
+        <li class="tab">
+            <a class="tab-title"
+               href="#tab-{{dashcase (lowercase (sanitize theme_settings.pdp-custom-fields-tab-label))}}"
+            >
+                {{sanitize theme_settings.pdp-custom-fields-tab-label}}
+            </a>
+        </li>
+    {{/all}}
+    {{#all settings.show_product_reviews theme_settings.show_product_reviews product.reviews.total}}
+        <li class="tab">
+            <a class="tab-title productView-reviewTabLink" href="#tab-reviews">{{lang 'products.reviews.header' total=product.reviews.total}}</a>
+        </li>
+    {{/all}}
+    <li class="tab">
+        <a class="tab-title productView-reviewTabLink" href="#tab-shipping-info">Shipping info</a>
+    </li>
+</ul>
+<div class="tabs-contents">
+    {{#if product.description}}
+        <div class="tab-content is-active" id="tab-description">
+            {{{product.description}}}
+        </div>
+    {{/if}}
+    {{#if product.warranty}}
+        <div class="tab-content {{#unless product.description}}is-active{{/unless}}" id="tab-warranty">
+            {{{product.warranty}}}
+        </div>
+    {{/if}}
+    {{#all product.custom_fields theme_settings.show_custom_fields_tabs}}
+      <div class="tab-content" id="tab-{{dashcase (lowercase (sanitize theme_settings.pdp-custom-fields-tab-label))}}">
+         <dl class="productView-info">
+            {{> components/products/custom-fields }}
+         </dl>
+      </div>
+    {{/all}}
+    {{#all settings.show_product_reviews theme_settings.show_product_reviews}}
+       <div class="tab-content" id="tab-reviews">
+           {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
+       </div>
+    {{/all}}
+    <div class="tab-content" id="tab-shipping-info">
+        <ul>
+            <li>Orders are usually processed within 24 hours. Those placed on weekends and holidays will begin processing at the start of the next business day.</li>
+            <li>If you need to receive any part by a certain deadline, or within an urgent timeframe, please call or email us so we can verify the ready availability of the item(s) in question.</li>
+            <li>At Enjuku racing, we are pleased to ship orders to any location in the world.</li>
+            <li>Most customers within the 48 continental United States receive their orders within 7-10 business days.</li>
+            <li>We ship most orders via FedEx Ground. All orders outside the continental United States are subject to higher shipping costs.</li>
+        </ul>
+    </div>
+</div>

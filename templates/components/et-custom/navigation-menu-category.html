@@ -1,0 +1,54 @@
+<ul id="sidebar-menu">
+    {{#each pages}}
+        {{#each children}}
+            {{#contains name "ALL Top Menu"}}
+                {{#each children}}
+                    <li><a href="{{url}}">{{first (split name '*')}}</a></li>
+                {{/each}}    
+            {{/contains}}
+        {{/each}}
+    {{/each}}
+    {{#each categories}}
+        {{#unless name "Main Categories"}}
+        <li>
+            {{#if children}}
+                <a href="{{url}}" data-collapsible="navSubcat-{{id}}">
+                    {{name}} <i class="fa fa-chevron-down" id="fa-id-{{id}}"></i>
+                </a>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="{{url}}">{{lang 'category.view_all.name' category=name}}</a>
+                        </li>
+                        {{#each children}}
+                            <li>
+                                {{#if children}}
+                                    <a
+                                        href="{{url}}"
+                                        data-collapsible="navSubcat-{{id}}"
+                                        data-collapsible-disabled-breakpoint="medium"
+                                        data-collapsible-disabled-state="open"
+                                        data-collapsible-enabled-state="closed">
+                                        {{name}} <i class="fa fa-plus"></i>
+                                    </a>
+                                    <ul>
+                                        {{#each children}}
+                                        <li>
+                                            <a href="{{url}}">{{name}}</a>
+                                        </li>
+                                        {{/each}}
+                                    </ul>
+                                {{else}}
+                                    <a href="{{url}}">{{name}}</a>
+                                {{/if}}
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            {{else}}
+                <a href="{{url}}">{{name}}</a>
+            {{/if}}
+        </li>
+        {{/unless}}
+    {{/each}}
+</ul>

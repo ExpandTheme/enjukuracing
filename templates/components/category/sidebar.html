@@ -1,0 +1,7 @@
+<nav>
+    {{#if category.faceted_search_enabled}}
+        {{> components/faceted-search/index category}}
+    {{else}}
+        {{> components/category/shop-by-price}}
+    {{/if}}
+</nav>

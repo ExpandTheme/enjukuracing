@@ -1,0 +1,73 @@
+---
+category:
+    shop_by_price: true
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
+---
+{{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{#partial "head"}}
+    {{#if pagination.category.previous}}
+        <link rel="prev" href="{{pagination.category.previous}}">
+    {{/if}}
+    {{#if pagination.category.next}}
+        <link rel="next" href="{{pagination.category.next}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+
+
+<section class="et-category-header-section">
+    <div class="et-container">
+        <div class="et-category-header">
+            {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+            {{#if category.description '===' ""}}
+                <h1 class="mb-0">{{category.name}}</h1>
+            {{else}}
+                <div class="et-category-header-wrap">
+                    <div class="et-category-header__peragraph">
+                        {{{category.description}}}
+                    </div>
+                    <a class="et-read-toggle" href="#">Read More</a>
+                    <a class="et-read-less-toggle" href="#">Read Less</a>
+                </div>
+            {{/if}}
+            
+        </div>
+    </div>
+</section>
+
+<section class="et-category-main-section">
+    <div class="et-container">
+        <div class="et-category-wrap">
+            <div class="et-category__left">
+                <div class="et-category-sidebar">
+                    <aside id="faceted-search-container">
+                        {{#if category.faceted_search_enabled}}
+                            {{> components/category/sidebar}}
+                        {{else if category.subcategories}}
+                            {{> components/category/sidebar}}
+                        {{else if category.shop_by_price}}
+                            {{#if theme_settings.shop_by_price_visibility}}
+                                {{> components/category/sidebar}}
+                            {{/if}}
+                        {{else}}
+                            <!-- Empty aside to ensure container renders -->
+                            <!-- Intentionally left empty for display purposes -->
+                        {{/if}}
+                    </aside>
+                </div>
+            </div>
+            <div class="et-category__right">
+                <main id="product-listing-container">
+                    {{> components/category/product-listing}}
+                    {{{region name="category_below_content"}}}
+                </main>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{{/partial}}
+{{> layout/base}}

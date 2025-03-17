@@ -1,0 +1,9 @@
+<ul class="et-navigation-top">
+    {{#each pages}}
+        {{#each children}}
+            {{#contains name "Top Level"}}
+                {{> components/et-custom/navigation-menu-top-list}}
+            {{/contains}}
+        {{/each}}
+    {{/each}}
+</ul>

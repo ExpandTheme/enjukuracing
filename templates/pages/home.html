@@ -1,0 +1,346 @@
+---
+products:
+    new:
+        limit: 100
+    featured:
+        limit: 100
+    top_sellers:
+        limit: 100
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+---
+{{#partial "hero"}}
+    {{#and carousel carousel.slides.length}}
+        {{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
+    {{/and}}
+{{/partial}}
+
+{{#partial "page"}}
+
+    {{#each shipping_messages}}
+        {{> components/common/alert/alert-info message}}
+    {{/each}}
+
+    <section class="et-main-banner-section">
+        <div class="et-main-banner">
+            <div>
+                <div class="et-banner-item">
+                    <div class="et-banner-item__image">
+                        <img src="https://cdn11.bigcommerce.com/s-m2vb5hvcrs/product_images/uploaded_images/carousel-1-image-1.jpg" alt="">
+                    </div>
+                    <div class="et-banner-item__content">
+                        <img src="https://cdn11.bigcommerce.com/s-m2vb5hvcrs/product_images/uploaded_images/pfhnhssky.png" alt="">
+                        <h2>Shop BC Coilovers</h2>
+                        <p>The official coilover of Team Enjuku</p>
+                        <a class="et-button et-button--primary et-button--large" href="#">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="et-select-vehicle">
+                <div class="et-select-vehicle-tab-nav">
+                    <a class="active" href="#vehicle">Shop by Vehicle</a>
+                    <a href="#universal">Universal Parts</a>
+                    <a href="#brand">Shop by Brand</a>
+                </div>
+                <div class="et-select-vehicle-tabs-content">
+                    <div class="et-select-vehicle-tab-content active" id="vehicle">
+                        <div class="et-form-select">
+                            <select id="make">
+                                <option value="-1">Select Make</option>
+                            </select>
+                        </div>
+                        <div class="et-form-select">
+                            <select id="model" disabled>
+                                <option value="-1">Select Model / Part</option>
+                            </select>
+                        </div>
+                        <div class="et-form-select">
+                            <select id="part" disabled>
+                                <option value="-1">Select Part / Sub Part</option>
+                            </select>
+                        </div>
+                        <button id="findVehicle" class="et-button et-button--medium et-button--primary" type="button">Find now</button>
+                        <button id="resetVehicle" class="et-button et-button--medium et-button--outline-v2" type="button">Reset</button>
+                    </div>
+                    <div class="et-select-vehicle-tab-content" id="universal">
+                        <div class="et-form-select">
+                            <select id="universalPart">
+                                <option value="-1">Select Part</option>
+                            </select>
+                        </div>
+                        <button id="findUniversal" class="et-button et-button--medium et-button--primary" type="button">Find now</button>
+                    </div>
+                    <div class="et-select-vehicle-tab-content" id="brand">
+                        <div class="et-form-select">
+                            <select id="selectBrand">
+                                <option value="-1">Select Brand</option>
+                            </select>
+                        </div>
+                        <div class="et-form-select">
+                            <select id="selectPart">
+                                <option value="-1">Select Part</option>
+                            </select>
+                        </div>
+                        <button id="findBrand" class="et-button et-button--medium et-button--primary" type="button">Find now</button>
+                        <button id="resetBrand"  class="et-button et-button--medium et-button--outline-v2" type="button">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="et-banner-bottom-section">
+        <div class="et-container">
+            <div class="et-banner-bottom">
+                <h3>Bringing You Nissan Aftermarket Parts & More</h3>
+                <p>Enjuku Racing is your trusted supplier of high-quality aftermarket parts for Nissan, BMW, Honda, and more. We bring you the best products in the industry at competitive prices that won’t be beat.</p>
+            </div>
+        </div>
+    </section>
+
+    {{#if products.featured}}
+       <section class="et-product-section">
+            <div class="et-container">
+                <div class="et-section-title">
+                    <h2>Featured Products</h2>
+                </div>
+                {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+            </div>
+       </section>
+    {{/if}}
+
+    <section class="et-distributor-section" style="background-image: url(https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/banner-image.png);">
+        <div class="et-distributor-overlay"></div>
+        <div class="et-container">
+            <div class="et-distributor">
+                <div class="et-distributor__left">
+                    <div class="et-distributor-konig">
+                        <div class="et-distributor-konig__image">
+                            <img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/konig-logo.png" alt="">
+                        </div>
+                        <div class="et-distributor-konig__content">
+                            <h3>Authorized Distributor</h3>
+                            <a class="et-button et-button--primary et-button--large" href="#">Shop now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="et-distributor__right">
+                    <img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/three-wheels.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{#if products.new}}
+    <section class="et-product-section">
+        <div class="et-container">
+            <div class="et-section-title">
+                <h2>New Products</h2>
+            </div>
+            {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+        </div>
+    </section>
+    {{/if}}
+
+    <section class="et-about-enjuku-section">
+        <div class="et-container">
+            <div class="et-about-enjuku">
+                <div class="et-about-enjuku__image">
+                    <img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/driver-with-racecars.png" alt="">
+                </div>
+                <div class="et-about-enjuku__content">
+                    <h2>About ENJUKU</h2>
+                    <p>Enjuku Racing is your ultimate source for quality stock and performance automotive racing parts. Here you'll find the lowest prices on Nissan aftermarket parts and other performance auto parts that you can count on to satisfy your craving for speed. We offer expert advice, unrivaled customer service, and the convenience of being able to shop right from the comfort of your home, at the track, or anywhere else you feel inspired to upgrade your ride. Here are just a few of the many reasons why informed racers choose Enjuku.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="et-choose-us-section">
+        <div class="et-container">
+            <div class="et-section-title">
+                <h2>4 Reasons To Choose Us</h2>
+            </div>
+            <div>
+                <div class="et-choose-us-item">
+                    <div class="et-choose-us-item__image">
+                        <img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/professional-advice.png" alt="">
+                    </div>
+                    <div class="et-choose-us-item__content">
+                        <h3>Professional Advice</h3>
+                        <p>We want to be your only stop for quality auto racing parts, and we recognize that our customers may need some assistance in choosing the right products. After all, nobody is born an expert.</p>
+                        <p>As knowledgeable racing enthusiasts, we are happy to offer our professional advice, quotes, and assistance over the phone.</p>
+                        <p>If you need information or advice on the latest Nissan aftermarket parts, or if you have any questions at all, please feel free to give our friendly experts a call at (352) 241-8399.</p>
+                    </div>
+                </div>
+                <div class="et-choose-us-item">
+                    <div class="et-choose-us-item__image">
+                        <img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/professional-advice.png" alt="">
+                    </div>
+                    <div class="et-choose-us-item__content">
+                        <h3>Premium Products</h3>
+                        <p>We stand behind our inventory. We only carry dependable Nissan performance parts that allow you to take your car to the next level. We also have a huge selection of virtually every other race-car manufacturer's parts on the market, so take some time to have a look around.</p>
+                        <p>If you don't see what you're looking for, just give us a call and we will be happy to help you find the right part for your needs.</p>
+                        <p>We only sell the Nissan aftermarket parts and general performance parts that we would feel comfortable using ourselves, so buy from Enjuku Racing with complete confidence.</p>
+                    </div>
+                </div>
+                <div class="et-choose-us-item">
+                    <div class="et-choose-us-item__image">
+                        <img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/professional-advice.png" alt="">
+                    </div>
+                    <div class="et-choose-us-item__content">
+                        <h3>Competitive Pricing</h3>
+                        <p>Whether you need some basic Nissan aftermarket parts or a full performance turbo upgrade, we have you covered. We realize that repeat customers are the key to business longevity, so we keep our prices as low as possible. When you shop with Enjuku Racing, you know you are getting the most value for your dollar.</p>
+                        <p>It is no secret that upgrading and maintaining race cars can get expensive, and that is why savvy racers all over the globe choose us. We make it possible to keep your car at the front of the pack—even on a tight budget.</p>
+                    </div>
+                </div>
+                <div class="et-choose-us-item">
+                    <div class="et-choose-us-item__image">
+                        <img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/professional-advice.png" alt="">
+                    </div>
+                    <div class="et-choose-us-item__content">
+                        <h3>Great Shopping Experience</h3>
+                        <p>Of course, upgrading or maintaining a race car is rarely a simple process, but we make getting the Nissan performance parts you need painless. Our comprehensive website allows you to browse our massive inventory quickly and easily, then you just add the items you need to your cart and check out safely and securely.</p>
+                        <p>We process your orders within 24 hours, and you are ready to hit the track in no time. Our awesome customers keep coming back again and again because we make shopping for performance auto parts fun.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="et-shopnow-section">
+        <div class="et-container">
+            <div class="et-shopnow">
+                <div class="et-shopnow__image">
+                    <img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/shop-now-banner.png" alt="">
+                </div>
+                <div class="et-shopnow__content">
+                    <h4>By offering competitive prices without compromising quality, expert person-to-person assistance over the phone, fast turnaround times, and a huge selection, we have earned our stellar reputation in the racing community. If you are ready to boost your car's performance and gain the competitive edge, now is the time. The need for speed is a real thing, and we make sure you can afford to keep up.</h4>
+                    <a class="et-button et-button--large et-button--primary" href="#">Shop now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="et-brand-logo-section">
+        <div class="et-container">
+            <div class="et-section-title">
+                <h2><span>Our Brands</span></h2>
+            </div>
+            <div class="et-brand-logo-wrap">
+                <div class="et-brand-logo" data-brand-logo-slide>
+					<div class="et-brand-logo__item">
+                        <a href=""><img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/nissan-logo.png" alt=""></a>
+                    </div>
+                    <div class="et-brand-logo__item">
+                        <a href=""><img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/nissan-logo.png" alt=""></a>
+                    </div>
+                    <div class="et-brand-logo__item">
+                        <a href=""><img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/nissan-logo.png" alt=""></a>
+                    </div>
+                    <div class="et-brand-logo__item">
+                        <a href=""><img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/nissan-logo.png" alt=""></a>
+                    </div>
+                    <div class="et-brand-logo__item">
+                        <a href=""><img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/nissan-logo.png" alt=""></a>
+                    </div>
+                    <div class="et-brand-logo__item">
+                        <a href=""><img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/nissan-logo.png" alt=""></a>
+                    </div>
+                    <div class="et-brand-logo__item">
+                        <a href=""><img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/nissan-logo.png" alt=""></a>
+                    </div>
+                    <div class="et-brand-logo__item">
+                        <a href=""><img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/nissan-logo.png" alt=""></a>
+                    </div>
+                    <div class="et-brand-logo__item">
+                        <a href=""><img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/nissan-logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="et-brand-link">
+                    <a href="/brands">View All</a>
+                </div>
+            </div>
+        </div>
+   </section>
+
+    <section class="et-testimonial-section" style="background-image: url(https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/testimonials.png);">
+        <div class="et-container">
+            <div class="et-testimonial">
+                <div class="et-testimonial-header">
+                    <h2>What Our <br> Customers Are Saying</h2>
+                    <p>4.8 out of 5 stars on website</p>
+                </div>
+                <div class="et-testimonial-reviews" data-testimonial-slide>
+                    <div class="et-testimonial-reviews__item">
+                        <p class="et-testimonial-reviews__txt">Your company is simply amazing, I received the t-shirts today and have time to prepare them for the printers, we are tie-dyeing all of the shirts that we have purchased. Your service is outstanding, and I will always use your company in the future. Again, Thank you!</p>
+                        <div class="et-testimonial-reviews__client-info">
+                            <h4 class="et-testimonial-reviews__client-name">Sonia G.</h4>
+                            <div class="et-testimonial-reviews__stars">
+                                <svg><use href="#et-icon-star"></use></svg>
+                                <svg><use href="#et-icon-star"></use></svg>
+                                <svg><use href="#et-icon-star"></use></svg>
+                                <svg><use href="#et-icon-star"></use></svg>
+                                <svg><use href="#et-icon-star"></use></svg>
+                            </div>
+                            <p class="et-testimonial-reviews__verified"> <svg><use href="#et-icon-checkmark-circle"></use></svg> Verified Purchase – Outletshirts.com</p>
+                        </div>
+                    </div>
+                    <div class="et-testimonial-reviews__item">
+                        <p class="et-testimonial-reviews__txt">Thanks for the prompt response - your quick answers to my questions is why I ordered from your store. Arrived today. Thanks very much for all your help. I am very pleased.</p>
+                        <div class="et-testimonial-reviews__client-info">
+                            <h4 class="et-testimonial-reviews__client-name">Julia R.</h4>
+                            <div class="et-testimonial-reviews__stars">
+                                <svg><use href="#et-icon-star"></use></svg>
+                                <svg><use href="#et-icon-star"></use></svg>
+                                <svg><use href="#et-icon-star"></use></svg>
+                                <svg><use href="#et-icon-star"></use></svg>
+                                <svg><use href="#et-icon-star"></use></svg>
+                            </div>
+                            <p class="et-testimonial-reviews__verified"> <svg><use href="#et-icon-checkmark-circle"></use></svg> Verified Purchase – Outletshirts.com</p>
+                        </div>
+                    </div>
+                    <div class="et-testimonial-reviews__item">
+                        <p class="et-testimonial-reviews__txt">Very prompt service every time we have ordered.  Always get our order in a timely matter and have been very pleased with the T-shirts and sweatshirts we have received.  Thanks for the great service!!</p>
+                        <div class="et-testimonial-reviews__client-info">
+                            <h4 class="et-testimonial-reviews__client-name">Cindy R.</h4>
+                            <div class="et-testimonial-reviews__stars">
+                                <svg><use href="#et-icon-star"></use></svg>
+                                <svg><use href="#et-icon-star"></use></svg>
+                                <svg><use href="#et-icon-star"></use></svg>
+                                <svg><use href="#et-icon-star"></use></svg>
+                                <svg><use href="#et-icon-star"></use></svg>
+                            </div>
+                            <p class="et-testimonial-reviews__verified"> <svg><use href="#et-icon-checkmark-circle"></use></svg> Verified Purchase – Outletshirts.com</p>
+                        </div>
+                    </div>
+                    <div class="et-testimonial-reviews__item">
+                        <p class="et-testimonial-reviews__txt">Just wanted to let you know that I received the sweatshirts on the 5th. Wow, that was FAST! The sweatshirts are perfect! Thanks so much! I will definitely use your company again in the future!!! Great service!</p>
+                        <div class="et-testimonial-reviews__client-info">
+                            <h4 class="et-testimonial-reviews__client-name">Teri S.</h4>
+                            <div class="et-testimonial-reviews__stars">
+                                <svg><use href="#et-icon-star"></use></svg>
+                                <svg><use href="#et-icon-star"></use></svg>
+                                <svg><use href="#et-icon-star"></use></svg>
+                                <svg><use href="#et-icon-star"></use></svg>
+                                <svg><use href="#et-icon-star"></use></svg>
+                            </div>
+                            <p class="et-testimonial-reviews__verified"> <svg><use href="#et-icon-checkmark-circle"></use></svg> Verified Purchase – Outletshirts.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    {{inject "categories" categories}}
+    <script>
+        var jsContext = JSON.parse({{jsContext}});
+    </script>
+
+{{/partial}}
+{{> layout/base}}

@@ -1,0 +1,19 @@
+.et-main-banner{
+    display: grid;
+    grid-template-columns: 3fr 520px;
+}
+.et-banner-item{
+   position: relative;
+}
+.et-banner-item__image{
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+.et-banner-item__content{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100px;
+}

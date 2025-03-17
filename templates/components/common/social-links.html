@@ -1,0 +1,9 @@
+{{#if social_media}}
+    <div class="et-social-links">
+        {{#each social_media}}
+            <a class="{{display_name}}" href="{{url}}" target="_blank" rel="noopener">
+                <svg><use xlink:href="#et-icon-{{display_name}}" /></svg>
+            </a>
+        {{/each}}
+    </div>
+{{/if}}

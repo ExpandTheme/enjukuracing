@@ -1,0 +1,244 @@
+.et-category{
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+}
+.et-sub-category{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.et-category-wrap{
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    gap: 30px;
+    align-items: flex-start;
+  }
+  .et-category__left{
+    position: sticky;
+    top: 170px;
+  }
+  .et-category-sidebar{
+    .sidebarBlock-heading{
+      background-color: #F8F8F8;
+      text-transform: uppercase;
+      margin: 0;
+      padding: 8px 20px;
+      font-weight: 700;
+      font-size: 16px;
+      position: relative;
+    }
+    .sidebarBlock{
+      background-color: #fff;
+      border: 1px solid #ebebeb;
+      margin-bottom: 30px;
+      .navList{
+        margin: 0;
+      }
+    }
+    .sidebarBlock + .sidebarBlock{
+      margin: 0;
+      padding: 0;
+      
+    }
+    aside nav{
+      margin: 0;
+    }
+  }
+  
+  .et-sidebarBlock-category{
+    ul{
+      li{
+        border-bottom: 1px solid #ebebeb;
+        a{
+          font-size: 16px;
+          padding: 5px 15px;
+          &:hover{
+            color: #2b3687;
+          }
+        }
+      }
+    }
+  }
+  
+  .facetedSearch.sidebarBlock{
+    .sidebarBlock{
+      border: none;
+      margin: 0;
+      border-bottom: 1px solid #ebebeb;
+    }
+    .facetedSearch-navList{
+      margin: 0;
+    }
+  }
+  .et-fillter-remove-button{
+    position: absolute;
+    right: 10px;
+    font-size: 12px;
+    text-decoration: underline;
+    color: #777;
+  }
+  .et-refine-lists{
+    margin: 0;
+    padding: 10px 15px;
+    list-style: none;
+    overflow: hidden;
+    li{
+      float: left;
+      margin: 2px;
+      a.facetLabel{
+        background-color: #f0f1ff;
+        color: #000;
+      }
+    }
+  }
+  
+  .facetedSearch{
+    .accordion{
+      margin: 0;
+    }
+    .accordion-block{
+      .accordion-navigation{
+        .accordion-title{
+          font-size: 14px;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  .accordion--navList .accordion-block{
+    margin: 0;
+    border-bottom: 1px solid #ebebeb;
+    button{
+      margin: 0 !important;
+      padding: 8px 15px;
+    }
+    .accordion-content{
+      padding: 0 15px;
+      padding-bottom: 10px;
+    }
+    .facetedSearch-clearLink{
+      right: 35px;
+      text-transform: uppercase;
+      font-size: 12px;
+      top: 9px;
+      text-decoration: underline;
+    }
+  }
+  
+  .navList{
+    li{
+      a{
+        padding-top: 2px;
+        padding-bottom: 2px;
+        margin: 0;
+        padding-left: 20px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
+  #facet-range-form{
+    margin: 0;
+    padding-bottom: 15px;
+    .form-inlineMessage{
+      display: none;
+    }
+    input{
+      border-radius: 0;
+    }
+    .button.button--small{
+      background-color: #2b3687;
+      border-radius: 0;
+      border: none;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+  }
+  .et-category-header-section {
+    padding: 12px 0 20px 0;
+  }
+  .et-category-header__peragraph{
+    height: 80px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    &.active{
+      height: auto;
+    }
+  }
+  .et-read-toggle{
+    background: linear-gradient(180deg,hsla(0, 0%, 0%, 0),hsla(0,0%,100%,.6) 50%,#fff);
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 15px;
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    line-height: 1;
+    color: #2b3687;
+    font-weight: 500;
+  }
+  .et-read-less-toggle{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    color: #2b3687;
+    font-weight: 500;
+  }
+  .et-category-header{
+    .breadcrumbs{
+      margin-bottom: 12px;
+    }
+  }
+  
+  .et-no-fillter{
+    padding: 10px 15px;
+    margin: 0;
+    color: #ccc;
+  }
+  .et-category-main-section{
+    padding-bottom: 40px;
+  }
+  .mb-0{
+    margin-bottom: 0;
+  }
+  .productGrid{
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+    .product{
+      padding: 0 7.5px;
+      margin-bottom: 15px;
+      .card{
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .et-short-product{
+    margin: 0;
+    padding: 0;
+    border: none;
+    margin-bottom: 10px;
+  }
+  .et-short-product__inner{
+      padding-left: 65px;
+      position: relative;
+      label{
+        position: absolute;
+        left: 0;
+        margin: 0;
+        top: 7px;
+        color: #333;
+        text-transform: uppercase;
+      }
+      select{
+        width: auto;
+        border: 1px solid #ccc;
+        padding: 5px 10px;
+        border-radius: 3px;
+      }
+  }
+  

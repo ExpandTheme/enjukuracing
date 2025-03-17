@@ -1,0 +1,30 @@
+<div class="et-user-nav">
+
+    <div class="et-user-nav__item">
+        <svg><use href="#et-icon-users"></use></svg>
+        <div class="et-user-nav__item-account">
+            {{#if customer}}
+                <a href="{{urls.account.index}}" aria-label="{{lang 'common.account'}}">{{lang 'common.account'}}</a>
+                <span>{{lang 'common.or'}}</span>
+                <a href="{{urls.auth.logout}}" aria-label="{{lang 'common.logout'}}">{{lang 'common.logout'}}</a>
+            {{else}}
+                <a href="{{urls.auth.login}}" aria-label="{{lang 'common.login'}}">{{lang 'common.login'}}</a>
+                {{#if settings.account_creation_enabled}}
+                    <span>{{lang 'common.or'}}</span>
+                    <a href="{{urls.auth.create_account}}" aria-label="{{lang 'common.sign_up'}}">{{lang 'common.sign_up'}}</a>
+                {{/if}}
+            {{/if}}
+        </div>
+    </div>
+
+    <div class="et-user-nav__item">
+        <a class="et-user-nav__item-cart" data-cart-preview href="{{urls.cart}}" aria-label="{{lang 'cart.nav_aria_label'}}">
+            <div class="et-bag">
+                <svg><use href="#et-icon-bags"></use></svg>
+                <span class="et-countPill cart-quantity"></span>
+            </div>
+            <span class="et-cart-label">Cart</span>
+        </a>
+    </div>
+
+</div>

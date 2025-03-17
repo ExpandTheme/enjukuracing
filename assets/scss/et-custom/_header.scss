@@ -1,0 +1,119 @@
+.et-header-top-section{
+    background-color: #000000;
+    padding: 8px 0;
+}
+.et-affirm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    gap: 10px;
+    font-size: 14px;
+    img{
+        height: 25px;
+        width: auto;
+    }
+}
+
+.et-header-section{
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+.et-header{
+    display: grid;
+    grid-template-columns: 4.2fr 6fr 4fr;
+    gap: 35px;
+    align-items: center;
+}
+.et-header-logo{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.et-header-nav-bar{
+    cursor: pointer;
+    svg{
+        width: 25px;
+        height: 25px;
+    }
+}
+.et-header-logo-link{
+    img{
+        height: 52px;
+        width: auto;
+    }
+}
+.et-navigation-section{
+    background-color: #e50119;
+}
+.et-navigation-top{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 18px;
+}
+.et-navigation-top__list-link{
+    display: block;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.et-user-nav{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+.et-user-nav__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    svg{
+        width: 38px;
+        height: 38px;
+    }
+}
+.et-user-nav__item-account{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    a{
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: 600;
+    }
+}
+.et-user-nav__item-cart{
+    display: flex;
+    align-items: center;
+}
+.et-bag{
+    position: relative;
+    span.et-countPill {
+        position: absolute;
+        left: 0;
+        background: #e50119;
+        width: 18px;
+        height: 18px;
+        z-index: 1;
+        display: inline-flex;
+        bottom: 8px;
+        line-height: 1;
+        border-radius: 50%;
+        text-align: center;
+        font-weight: 500;
+        font-size: 14px;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+}
+.et-cart-label{
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+}

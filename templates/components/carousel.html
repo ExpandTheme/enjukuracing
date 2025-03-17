@@ -1,0 +1,11 @@
+<section style="display: none;">
+    {{#each carousel.slides}}
+        <div>
+            {{> components/common/responsive-img
+                image=stencil_image
+                fallback_size='1280w'
+                lazyload='disabled'
+            }}
+        </div>
+    {{/each}}
+</section>

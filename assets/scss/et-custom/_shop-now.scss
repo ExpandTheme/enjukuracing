@@ -1,0 +1,22 @@
+.et-shopnow-section{
+    background-color: #ebebeb;
+    padding: 20px 0;
+}
+.et-shopnow{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 30px;
+    align-items: center;
+}
+.et-shopnow__image{
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+.et-shopnow__content{
+    h4{
+        font-size: 26px;
+        line-height: 36px;
+    }
+}

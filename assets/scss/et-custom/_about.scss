@@ -1,0 +1,30 @@
+.et-about-enjuku-section{
+    background-color: #ccc;
+    padding: 50px 0;
+    background-image: url(https://cdn11.bigcommerce.com/s-79xyvl/stencil/896dd8d0-a341-013c-f72e-06f72c3957ee/e/160b0560-d6a2-013d-0c18-5e35c4b64d39/img/enjuku/about-bg.png);
+}
+.et-about-enjuku{
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    padding: 0 80px;
+    gap: 30px;
+}
+.et-about-enjuku__image{
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+.et-about-enjuku__content{
+    h2{
+        font-size: 42px;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+    }
+    p{
+        margin-bottom: 0;
+        font-size: 18px;
+        line-height: 28px;
+    }
+}

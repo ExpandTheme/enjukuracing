@@ -1,0 +1,18 @@
+<div>
+    <form data-url="{{urls.search}}" data-quick-search-form>
+        <div class="et-quick-search">
+            <input class="et-quick-search__input" name="{{name}}"
+                   id="{{name}}"
+                   data-error-message="{{lang 'search.error.empty_field'}}"
+                   placeholder="{{lang 'search.quick_search.input_placeholder'}}"
+                   autocomplete="off">
+                   <button class="et-quick-search__icon" type="submit"><svg><use href="#et-icon-search"></use></svg></button>
+        </div>
+    </form>
+    <!-- <section class="quickSearchResults" data-bind="html: results"></section>
+    <p role="status"
+       aria-live="polite"
+       class="aria-description--hidden"
+       data-search-aria-message-predefined-text="{{{lang 'search.results.quick_count_live'}}}"
+    ></p> -->
+</div>

@@ -1,0 +1,28 @@
+.et-choose-us-section{
+    padding: 50px 0;
+}
+.et-choose-us-item{
+    display: grid;
+    gap:15px;
+    margin-bottom: 30px;
+    grid-template-columns: 80px 1fr;
+}
+.et-choose-us-item__image{
+    img{
+        height: 70px;
+        min-height: 70px;
+        width: auto;
+    }
+}
+.et-choose-us-item__content{
+    h3{
+        font-size: 22px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    p{
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+}

@@ -1,0 +1,193 @@
+<article
+    class="et-card
+    {{#if alternate}} et-card--alternate{{/if}}"
+    data-test="card-{{id}}"
+    {{#if settings.data_tag_enabled}}
+        data-event-type="{{event}}"
+        data-entity-id="{{id}}"
+        data-position="{{position}}"
+        data-name="{{name}}"
+        data-product-category="
+        {{#each category}}
+            {{#if @last}}
+                {{this}}
+            {{else}}
+                {{this}},
+            {{/if}}
+        {{/each}}"
+        data-product-brand="{{brand.name}}"
+        data-product-price="
+        {{#or customer (unless settings.hide_price_from_guests)}}
+            {{#if price.with_tax}}
+                {{price.with_tax.value}}
+            {{else}}
+                {{price.without_tax.value}}
+            {{/if}}
+        {{else}}
+            {{lang 'common.login_for_pricing'}}
+        {{/or}}"
+    {{/if}}>
+   
+
+
+    <figure class="et-card-figure">
+        {{#if stock_level '===' 0}}
+            {{#if show_cart_action}}
+                {{#if theme_settings.pdp_sold_out_label '===' ''}}
+                    {{> components/products/product-badge
+                        badge-type='sold-out'
+                        badge_view=theme_settings.product_sold_out_badges
+                        badge_label=(lang "page_builder.pdp_sold_out_label")
+                    }}
+                {{else}}
+                    {{> components/products/product-badge
+                        badge-type='sold-out'
+                        badge_view=theme_settings.product_sold_out_badges
+                        badge_label=theme_settings.pdp_sold_out_label
+                    }}
+                {{/if}}
+            {{/if}}
+        {{else if has_options '===' false}}
+            {{#and (if stock_level '===' null) show_cart_action}}
+                {{#and (unless add_to_cart_url) (unless pre_order)}}
+                    {{#if theme_settings.pdp_sold_out_label '===' ''}}
+                        {{> components/products/product-badge
+                            badge-type='sold-out'
+                            badge_view=theme_settings.product_sold_out_badges
+                            badge_label=(lang "page_builder.pdp_sold_out_label")
+                        }}
+                    {{else}}
+                        {{> components/products/product-badge
+                            badge-type='sold-out'
+                            badge_view=theme_settings.product_sold_out_badges
+                            badge_label=theme_settings.pdp_sold_out_label
+                        }}
+                    {{/if}}
+                {{/and}}
+            {{/and}}
+        {{else}}
+            {{#or price.sale_price_with_tax.value price.sale_price_without_tax.value}}
+                {{#if theme_settings.pdp_sale_badge_label '===' ''}}
+                    {{> components/products/product-badge
+                        badge-type='sale'
+                        badge_view=theme_settings.product_sale_badges
+                        badge_label=(lang "page_builder.pdp_sale_badge_label")
+                    }}
+                {{else}}
+                    {{> components/products/product-badge
+                        badge-type='sale'
+                        badge_view=theme_settings.product_sale_badges
+                        badge_label=theme_settings.pdp_sale_badge_label
+                    }}
+                {{/if}}
+            {{/or}}
+        {{/if}}
+
+        <div class="et-card-top">
+            <a href="{{url}}"
+                class="et-card-figure__link"
+                aria-label="{{> components/products/product-info}}"
+                {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>
+                    <div class="et-card-img-container">
+                        {{> components/common/responsive-img
+                            image=image
+                            class="et-card-image"
+                            fallback_size=theme_settings.productgallery_size
+                            lazyload=theme_settings.lazyload_mode
+                            default_image=theme_settings.default_image_product
+                        }}
+                    </div>
+            </a>
+            <figcaption class="et-card-figcaption">
+                <div class="et-card-figcaption-body">
+                    {{#unless hide_product_quick_view}}
+                        {{#if theme_settings.show_product_quick_view}}
+                            {{#if settings.data_tag_enabled}}
+                                <button type="button" class="quickview" data-event-type="product-click" data-product-id="{{id}}"><svg><use xlink:href="#icon-eye"></svg>Quick View</button>
+                            {{else}}
+                                <button type="button" class="quickview" data-product-id="{{id}}"><svg><use xlink:href="#icon-eye"></svg>Quick View</button>
+                            {{/if}}
+                        {{/if}}
+                    {{/unless}}
+                    {{#if show_comparess}}
+                        <label class="button button--small card-figcaption-button" for="compare-{{id}}">
+                            {{lang 'products.compare'}} <input type="checkbox" name="products[]" value="{{id}}" id="compare-{{id}}" data-compare-id="{{id}}">
+                        </label>
+                    {{/if}}
+                </div>
+            </figcaption>
+        </div>
+
+    </figure>
+
+    <div class="et-card-body">
+        {{#if brand.name}}
+            <p class="et-card-text" data-test-info-type="brandName">
+                <spn class="et-card__brand">{{brand.name}}</spn>
+            </p>
+        {{/if}}
+
+        {{#and rating show_rating}}
+            <p class="et-card-text" data-test-info-type="productRating">
+                <span class="rating--small">
+                    {{> components/products/ratings rating_target=name rating=rating}}
+                </span>
+            </p>
+        {{/and}}
+        
+        <h3 class="et-card-title">
+            <a aria-label="{{> components/products/product-info}}"
+               href="{{url}}"
+               {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>
+                {{name}}
+            </a>
+        </h3>
+
+        <div class="et-card-text" data-test-info-type="price">
+            {{#or customer (unless settings.hide_price_from_guests)}}
+                {{> components/products/price price=price}}
+            {{else}}
+                {{> components/common/login-for-pricing}}
+            {{/or}}
+        </div>
+        
+        <div class="et-card-footer">
+            <div class="et-card-action-wrap">
+
+                <form method="post" action="/cart.php" enctype="multipart/form-data" data-cart-item-add>
+                    <input type="hidden" name="action" value="add">
+                    <input type="hidden" name="product_id" value="{{id}}"/>
+                    <div class="et-card-qty-atc">
+                        <div class="et-custom-qty">
+                            <input class="et-custom-qty__input" name="qty[]" step="1" type="tel" value="1" data-quantity-min="0" data-quantity-max="0" min="1" pattern="[0-9]*" aria-live="polite">
+                            <div class="et-custom-qty__btn-wrap">
+                                <button class="et-custom-qty__btn et-custom-qty__btn-plus" type="button"><svg class="arrow arrow-up"><use xlink:href="#icon-arrow-down"></svg></button>
+                                <button class="et-custom-qty__btn et-custom-qty__btn-minus" type="button"><svg class="arrow arrow-down"><use xlink:href="#icon-arrow-down"></svg></button>
+                            </div>
+                        </div>
+                        {{#if show_cart_action}}
+                            {{#if has_options}}
+                                <a href="{{url}}" data-event-type="product-click" class="button button--small card-figcaption-button" data-product-id="{{id}}">{{lang 'products.choose_options'}}</a>
+                            {{/if}}
+                            {{#if pre_order}}
+                                <a href="{{pre_order_add_to_cart_url}}" data-event-type="product-click" class="button button--small card-figcaption-button">{{lang 'products.pre_order'}}</a>
+                            {{/if}}
+                            {{#if add_to_cart_url }}
+                                <!-- <a href="{{add_to_cart_url}}" data-event-type="product-click" data-button-type="add-cart" class="button button--small card-figcaption-button">{{lang 'products.add_to_cart'}}</a> -->
+                                <button class="et-ajax-cart-button" data-ajax-cart type="submit"> <i class="ms-shopping-bag1"></i> <span id="text">{{lang 'products.add_to_cart'}}</span> <span class="et-loader"></span></button>
+                            {{/if}}
+                            {{#if out_of_stock_message }}
+                                <a href="{{url}}" data-event-type="product-click" class="button button-disabled" data-product-id="{{id}}">{{out_of_stock_message}}</a>
+                            {{/if}}
+                        {{/if}}
+                        
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+
+        {{> components/products/bulk-discount-rates}}
+    </div>
+</article>
+

@@ -1,0 +1,131 @@
+<div class="et-previewCartWrapper">
+    <div class="et-previewCart">
+          {{#if cart.items.length}}
+              <div class="et-previewCart-body">
+                  <ul class="et-previewCartList">
+                      {{#each (limit cart.items 100)}}
+                          <li class="et-previewCartItem">
+                              <div class="et-previewCartItem-image">
+                                  {{#if type '==' 'GiftCertificate'}}
+                                      <img
+                                          alt="GiftCertificate"
+                                          title="GiftCertificate"
+                                          src="{{cdn ../theme_settings.default_image_gift_certificate}}"
+                                      >
+                                  {{else}}
+                                      {{> components/common/responsive-img
+                                          image=image
+                                          fallback_size=../theme_settings.productthumb_size
+                                          lazyload=../theme_settings.lazyload_mode
+                                          default_image=../theme_settings.default_image_product
+                                      }}
+                                  {{/if}}
+                              </div>
+                              <div class="et-previewCartItem-content">
+                                  <a class="et-remove-cart-item" data-id="{{id}}" href="javascript:void(0)"><svg><use href="#icon-trash-bin"></use></svg></a>
+                                  <span class="previewCartItem-brand">
+                                      {{brand.name}}
+                                  </span>
+                                  <h6 class="et-previewCartItem-name">
+                                      <a href="{{url}}" alt="{{name}}" title="{{name}}">{{name}}</a>
+                                  </h6>
+  
+                                    <div class="et-previewCartItem-meta">
+                                            <p>SKU: <span class="et-productViewSKU" data-ajax-sku="{{sku}}"> {{sku}}</span></p>
+                                            {{#if options}}
+                                                {{#each options}}
+                                                    <p>
+                                                        {{name}}:
+                                                        <span>
+                                                            {{#if is_file}}
+                                                                <a href="/viewfile.php?attributeId={{id}}&cartitem={{../id}}">{{value}}</a>
+                                                            {{else}}
+                                                                {{> components/common/product-options}}
+                                                            {{/if}}
+                                                        </span>
+                                                    </p>
+                                                {{/each}}
+                                            {{/if}}
+                                    </div>
+
+                                  <span class="et-previewCartItem-price">
+                                      
+                                      {{#or ../customer (unless ../settings.hide_price_from_guests) (if type '==' 'GiftCertificate')}}
+                                          <span {{#if price_discounted}} class="price--discounted"{{/if}}>{{price.formatted}}</span>
+                                          {{#if price_discounted}}
+                                              {{price_discounted.formatted}}
+                                          {{/if}}
+                                          {{else}}
+                                              {{> components/common/login-for-pricing}}
+                                      {{/or}}
+                                      {{#if quantity '>' 1}}
+                                        <span class="et-previewCartItem-price-span">&times; {{quantity}} </span>
+                                      {{/if}}
+                                  </span>
+  
+                                  <div class="et-custom-qty_sidecart">
+                                      <button class="et-custom-qty__btn et-custom-qty__btn-minus" data-id="{{id}}" type="button"><svg><use xlink:href="#icon-minus"></use></svg></button>
+                                      <input class="et-custom-qty__input" id="qty[]" name="qty[]" type="tel" value="{{quantity}}" data-quantity-min="0" data-quantity-max="0" min="1" pattern="[0-9]*" aria-live="polite">
+                                      <button class="et-custom-qty__btn et-custom-qty__btn-plus" data-id="{{id}}" type="button"><svg><use xlink:href="#icon-plus"></use></svg></button>
+                                  </div>
+  
+                              </div>
+                          </li>
+                      {{/each}}
+                      </ul>
+              </div>
+              <div class="et-sidecart-footer">
+                  <div class="side-cart-totals">
+                      <span>GRAND TOTAL:</span>
+                      <strong>{{cart.grand_total.formatted}}</strong> 
+                  </div>
+                  <div class="et-previewCartAction">
+                      {{#if cart.additional_checkout_buttons}}
+                          <div data-cart-accelerated-checkout-buttons class="previewCart-acceleratedCheckoutButtons"></div>
+                      {{/if}}
+                      {{#if cart.show_primary_checkout_button}}
+                          <div class="et-previewCartAction-checkout">
+                              <a
+                                      href="{{urls.checkout.single_address}}"
+                                      class="button button--small button--primary mb-2"
+                                      data-primary-checkout-now-action>
+
+                                  {{lang 'cart.preview.checkout_now'}}
+                              </a>
+                          </div>
+                      {{/if}}
+                      {{#if cart.show_multiple_address_shipping}}
+                          <div class="et-previewCartAction-checkoutMultiple">
+                              <a href="{{urls.checkout.multiple_address}}">
+                                  {{lang 'cart.preview.checkout_multiple'}}
+                              </a>
+                          </div>
+                      {{/if}}
+                      <div class="et-previewCartAction-viewCart">
+                          <a href="/cart.php" class="et-previewCartAction--cartlink">
+                              View Shopping Cart
+                          </a>
+                      </div>
+                  </div>
+{{!--                   
+                  {{#if cart.additional_checkout_buttons}}
+                      <p class="et-or-use-label">-- or use --</p>
+                      <div class="et-previewCart-additionalCheckoutButtons">
+                          {{#each cart.additional_checkout_buttons}}
+                              {{{this}}}
+                          {{/each}}
+                      </div>
+                  {{/if}}
+                   --}}
+              </div>
+          {{else}}
+              <div role="alert" aria-live="polite" aria-atomic="false" class="et-previewCart-emptyBody">
+                  <div class="empty-bag-logo">
+                      <svg><use xlink:href="#icon-empty-bag"></svg>
+                  </div>
+                  <h2>There are no products in your shopping cart.</h2>
+                  <a class="button" href="{{urls.home}}">Shop Now</a>
+              </div>
+          {{/if}}
+      </div>
+  </div>

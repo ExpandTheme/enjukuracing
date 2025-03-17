@@ -1,0 +1,56 @@
+<section class="et-sticky-addto-cart-section">
+    <div class="et-container">
+        <div class="et-sticky-addto-cart">
+            <div class="et-prod-info">
+                {{#if product.main_image}}
+                    <img src="{{getImageSrcset product.main_image (cdn theme_settings.default_image_product) 1x=theme_settings.sticky_product_size}}" alt="">
+                {{/if}}
+                <h1 class="productView-title">{{product.title}}</h1>
+                {{#if product.call_for_price}}
+                    <p class="productView-price">
+                        <span>{{product.call_for_price}}</span>
+                    </p>
+                {{/if}}
+                <div class="productView-price">
+                    {{#or customer (unless settings.hide_price_from_guests)}}
+                        {{> components/products/price price=product.price}}
+                    {{else}}
+                        <p class="login-for-prc"><a href="{{urls.auth.login}}">Login for pricing</a></p>
+                    {{/or}}
+                </div>
+            </div>
+            <div class="et-productView-options">
+                {{#if product.release_date }}
+                    <p>{{product.release_date}}</p>
+                {{/if}}
+                <form class="form" method="post" action="{{product.cart_url}}" enctype="multipart/form-data">
+                    <input type="hidden" name="action" value="add">
+                    <input type="hidden" name="product_id" value="{{product.id}}"/>
+                    <div data-product-option-change style="display:none;">
+                        {{inject 'showSwatchNames' theme_settings.show_product_swatch_names}}
+                        {{#each product.options}}
+                            {{{dynamicComponent 'components/products/options'}}}
+                        {{/each}}
+                    </div>
+                    <div class="et-sticky-atc-wrap">
+                        <div class="et-custom-qty">
+                            <input class="et-custom-qty__input" id="qty[]" name="qty[]" type="tel" value="1" data-quantity-min="0" data-quantity-max="0" min="1" pattern="[0-9]*" aria-live="polite">
+                            <div class="et-custom-qty__btn-wrap">
+                                <button class="et-custom-qty__btn et-custom-qty__btn-plus" type="button"><svg class="arrow arrow-up"><use xlink:href="#icon-arrow-down"></use></svg></button>
+                                <button class="et-custom-qty__btn et-custom-qty__btn-minus" type="button"><svg class="arrow arrow-down"><use xlink:href="#icon-arrow-down"></use></svg></button>
+                            </div>
+                        </div>
+                        {{#or customer (unless settings.hide_price_from_guests)}}
+                            <button class="et-ajax-cart-button" data-ajax-cart type="submit"> 
+                                <i class="ms-shopping-bag1"></i> Add to Cart <span class="loader"></span>
+                            </button>
+                        {{else}}
+                            <a class="et-ajax-cart-button button-disabled" href="{{urls.auth.login}}"><i class="ms-shopping-bag1"></i>Login for add to cart</a>
+                        {{/or}}
+                    </div>
+                </form>
+                <a href="https://wa.me/97466152971?text=I%20want%20to%20order.%0AProduct%20Name%3A%20{{product.title}}%0ASKU%3A%20{{product.sku}}%0AProduct%20URL%3A%20{{product.url}}" class="order-on-whatsapp" target="_blank"><span>Order on whatsApp</span><i class="ms-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+</section>

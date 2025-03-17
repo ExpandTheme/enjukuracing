@@ -1,0 +1,52 @@
+{{#if banners.top}}
+<div class="banners" data-banner-location="top">
+    {{#each (limit banners.top_metadata 1)}}
+    <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
+        <div data-event-type="promotion-click">
+            {{{this.content}}}
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/if}}
+
+<section class="et-header-top-section">
+    <div class="et-container">
+        <div class="et-affirm">
+            <img src="https://caros-demo-02.mybigcommerce.com/product_images/uploaded_images/top-promotion-image-2.png" alt="">
+            <span>Buy Now, Pay Later Starting at 0% APR</span>
+            <a class="et-button et-button--outline et-button--small" href="#">Learn more</a>
+        </div>
+    </div>
+</section>
+
+<header class="et-header-section">
+    <div class="et-container">
+        <div class="et-header">
+            {{> components/common/store-logo}}
+            {{> components/common/quick-search}}
+            {{> components/common/navigation}} 
+        </div>
+    </div>
+</header>
+
+<section class="et-navigation-section">
+    <div class="et-container">
+        {{> components/et-custom/navigation-menu-top}}
+    </div>
+</section>
+
+
+<div class="et-sidebar-category">
+    <div class="et-sidebar-category-logo">
+        {{> components/et-custom/logo}}
+    </div>
+    <div class="panel-menu mobile-main-menu">
+        {{> components/et-custom/navigation-menu-category}}
+    </div>
+</div>
+
+{{> components/et-custom/side-cart}}
+
+{{{region name="header_bottom--global"}}}
+{{{region name="header_bottom"}}}

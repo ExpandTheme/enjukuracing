@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&family=Qwigley&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@300;400;500;600;700;800&family=Qwigley&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Barlow", sans-serif;
+    line-height: 24px;
+    padding: 0;
+    background-color: #F9F9F9;
+}
+.et-container{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1320px;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: "Barlow Condensed", sans-serif;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+a{
+    text-decoration: none;
+}
+*:focus {
+    outline: none !important;
+    outline-offset: 0 !important;
+}
+a,
+input,
+[href],
+select,
+button:focus, 
+textarea,
+details,
+[tabindex]:not([tabindex="-1"]), 
+[contenteditable="true"] {
+    &:focus,
+    &:focus-visible {
+        outline: none !important;
+        outline-offset: 0px !important;
+    }
+}
+textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+
+.et-overlay-bg{
+    position: fixed;
+    background-color: rgba(0, 0, 0, .2);
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+.et-page-inner{
+    padding: 0 15%;
+}

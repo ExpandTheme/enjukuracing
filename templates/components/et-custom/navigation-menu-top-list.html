@@ -1,0 +1,11 @@
+{{#if children}}
+        {{#each children}}
+            <li class="et-navigation-top__list">
+                <a class="et-navigation-top__list-link" href="{{url}}"
+                    aria-label="{{first (split name '*')}}" 
+                    {{#contains name '240SX'}}aria-selected="true"{{/contains}}>
+                    {{first (split name '*')}}
+                </a>
+            </li>
+        {{/each}}
+{{/if}}
