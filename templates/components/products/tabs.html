@@ -1,9 +1,9 @@
 {{#if product.related_products}}
-    <h2>Related Products</h2>
+    <h2 class="et-product-page-section-title">Related Products</h2>
     {{> components/products/grid products=product.related_products columns=6 list="Related Products"}}
 {{/if}}
 
 {{#if product.similar_by_views}}
-    <h2>Customers Also Viewed</h2>
+    <h2 class="et-product-page-section-title">Customers Also Viewed</h2>
     {{> components/products/grid products=product.similar_by_views columns=6 list="Customers Also Viewed"}}
 {{/if}}

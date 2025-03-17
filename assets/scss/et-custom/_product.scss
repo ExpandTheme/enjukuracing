@@ -1,10 +1,10 @@
 .et-productView {
     display: grid;
-    grid-template-columns: 1fr 1.1fr;
+    grid-template-columns: 1fr 1.3fr;
     background-color: #fff;
     margin-bottom: 0;
-    padding: 30px 30px 0 30px;
-    gap: 30px;
+    padding: 25px;
+    gap: 60px;
 }
 .et-productView-thumbnail {
     display: grid;
@@ -19,5 +19,85 @@
             margin: 0;
             padding: 0;
         }
+    }
+}
+.et-description-tab-section{
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 15px 30px;
+    border-radius: 15px;
+    ul.tabs{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        border: none;
+        display: flex;
+        gap: 30px;
+        margin-bottom: 10px;
+        &::before, &::after{
+            display: none;
+        }
+        li.tab{
+            border: none;
+            float: none;
+            a{
+                padding: 0 5px;
+                font-weight: 600;
+                border-bottom: 1px solid transparent;
+                text-transform: uppercase;
+                font-size: 14px;
+            }
+            &.is-active{
+                a{
+                    border-color: #e50019;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .tabs-contents{
+        margin: 0;
+        padding: 0;
+        &::before, &::after{
+            display: none;
+        }
+        .tab-content{
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+.et-product-page-section-title{
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.et-productView-brand{
+    a{
+        border: 1px solid #efefef;
+        background-color: #efefef;
+        display: block;
+        text-align: center;
+        padding: 20px 10px;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: underline;
+        color: #e50019;
+    }
+}
+
+.et-productview-info{
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 15px 30px;
+    max-width: 70%;
+    p{
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
     }
 }

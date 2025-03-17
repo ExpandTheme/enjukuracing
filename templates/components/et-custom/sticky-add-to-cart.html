@@ -1,7 +1,7 @@
-<section class="et-sticky-addto-cart-section">
+<section class="et-sticky-cart-section" data-sticky-cart>
     <div class="et-container">
-        <div class="et-sticky-addto-cart">
-            <div class="et-prod-info">
+        <div class="et-sticky-cart">
+            <div class="et-sticky-cart__image">
                 {{#if product.main_image}}
                     {{> components/common/responsive-img
                         image=product.main_image
@@ -12,25 +12,18 @@
                         otherAttributes="data-main-image"
                     }}
                 {{/if}}
-                <h1 class="productView-title">{{product.title}}</h1>
-                {{#if product.call_for_price}}
-                    <p class="productView-price">
-                        <span>{{product.call_for_price}}</span>
-                    </p>
-                {{/if}}
-                <div class="productView-price">
-                    {{#or customer (unless settings.hide_price_from_guests)}}
-                        {{> components/products/price price=product.price}}
-                    {{else}}
-                        <p class="login-for-prc"><a href="{{urls.auth.login}}">Login for pricing</a></p>
-                    {{/or}}
+            </div>
+            <div class="et-sticky-cart__content">
+                <h1>{{product.title}}</h1>
+                <div class="et-product-view-price">
+                    {{> components/products/price price=product.price}}
                 </div>
             </div>
-            <div class="et-productView-options">
+            <div class="et-sticky-cart__action">
                 {{#if product.release_date }}
                     <p>{{product.release_date}}</p>
                 {{/if}}
-                <form class="form" method="post" action="{{product.cart_url}}" enctype="multipart/form-data">
+                <form method="post" action="{{product.cart_url}}" enctype="multipart/form-data">
                     <input type="hidden" name="action" value="add">
                     <input type="hidden" name="product_id" value="{{product.id}}"/>
                     <div data-product-option-change style="display:none;">
@@ -39,7 +32,7 @@
                             {{{dynamicComponent 'components/products/options'}}}
                         {{/each}}
                     </div>
-                    <div class="et-sticky-atc-wrap">
+                    <div class="et-sticky-cart-wrap">
                         <div class="et-custom-qty">
                             <input class="et-custom-qty__input" id="qty[]" name="qty[]" type="tel" value="1" data-quantity-min="0" data-quantity-max="0" min="1" pattern="[0-9]*" aria-live="polite">
                             <div class="et-custom-qty__btn-wrap">

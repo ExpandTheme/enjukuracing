@@ -1,4 +1,4 @@
-.et-sticky-addto-cart-section{
+.et-sticky-cart-section{
     position: fixed;
     bottom: -150px;
     background-color: #fff;
@@ -11,68 +11,45 @@
     backdrop-filter: blur(6px);
     box-shadow: 10px 6px 74px rgba(0, 0, 0, 0.20);
     transition: all 300ms ease;
+    padding: 10px 0;
     &.active{
         bottom: 0;
     }
 }
-.et-sticky-addto-cart {
-    display: grid;
-    grid-template-columns: 7fr 5fr;
-    padding: 15px 0;
-}
-
-.et-prod-info {
-    position: relative;
-    padding-left: 80px;
-    img {
-        position: absolute;
-        left: 0;
-        width: auto;
-        height: 60px;
-    }
-    .productView-title {
-        font-size: 18px;
-        padding-bottom: 5px;
-        font-weight: 100;
-    }
-    .productView-price {
-        font-size: unset;
-        margin: 0;
-        .price {
-            font-size: 16px;
-            font-weight: 500;
-        }
-        .login-for-prc {
-            font-size: 16px;
-        }
+.et-sticky-cart__image{
+    min-width: 100px;
+    img{
+        width: 100%;
+        height: auto;
     }
 }
-.et-sticky-addto-cart .et-productView-options {
-    align-self: center;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 10px;
-    .form {
-        margin: 0;
-        order: 2;
-    }
-    .order-on-whatsapp {
-        text-decoration: none;
-        background: #fff;
-        border-radius: 4px;
-        padding: 8px 10px;
-        display: inline-flex;
-        align-items: center;
-        gap: 0 8px;
-        width: fit-content;
-        justify-self: end;
-        i {
-            font-size: 25px;
-            color: #00e676;
-        }
-    }
-}
-.et-sticky-atc-wrap {
+.et-sticky-cart{
     display: flex;
-    gap: 0 10px;
+    gap: 20px;
+    align-items: center;
+}
+.et-sticky-cart__content{
+    h1{
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+}
+.et-product-view-price{
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    .price-section.price-section--saving.price{
+        display: none !important;
+    }
+}
+.et-sticky-cart__content{
+    min-width: 72%;
+}
+.et-sticky-cart__action{
+    min-width: 200px;
+}
+.et-sticky-cart-wrap{
+    display: flex;
+    gap: 10px;
 }

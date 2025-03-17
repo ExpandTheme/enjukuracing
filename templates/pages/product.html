@@ -5,9 +5,9 @@ product:
     reviews:
         limit: {{theme_settings.productpage_reviews_count}}
     related_products:
-        limit: {{theme_settings.productpage_related_products_count}}
+        limit: 4
     similar_by_views:
-        limit: {{theme_settings.productpage_similar_by_views_count}}
+        limit: 4
 ---
 {{inject 'productId' product.id}}
 
@@ -33,18 +33,24 @@ product:
             {{#all settings.show_product_reviews theme_settings.show_product_reviews (if theme_settings.show_product_details_tabs '!==' true)}}
                 {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
             {{/all}}
-            {{> components/products/tabs}}
+        </div>
+   </section>
+
+   <section>
+        <div class="et-container">
+            <div>
+                {{> components/products/tabs}}
+            </div>
         </div>
    </section>
 
     {{> components/products/schema}}
+    {{> components/et-custom/sticky-add-to-cart}}
 
     {{inject "categories" categories}}
     <script>
         var jsContext = JSON.parse({{jsContext}});
     </script>
-
-    {{> components/et-custom/sticky-add-to-cart}}
 
 {{/partial}}
 {{> layout/base}}

@@ -146,15 +146,7 @@
             <div class="et-footer-copyright">
                 &copy; Copyright  {{moment format="YYYY"}} {{settings.store_name}} All Rights Reserved
             </div>
-            <div class="et-footer-payment-methods">
-                <img src="{{cdn 'img/payment-methods-v2/ic_affirm.svg'}}" alt="">
-                <img src="{{cdn 'img/payment-methods-v2/ic_amex.svg'}}" alt="">
-                <img src="{{cdn 'img/payment-methods-v2/ic_apple.svg'}}" alt="">
-                <img src="{{cdn 'img/payment-methods-v2/ic_dis.svg'}}" alt="">
-                <img src="{{cdn 'img/payment-methods-v2/ic_jcb.svg'}}" alt="">
-                <img src="{{cdn 'img/payment-methods-v2/ic_master.svg'}}" alt="">
-                <img src="{{cdn 'img/payment-methods-v2/ic_paypal.svg'}}" alt="">
-            </div>
+            {{> components/et-custom/payment-methods}}
         </div>
     </div>
 </section>

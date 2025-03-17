@@ -87,16 +87,17 @@
                     {{/each}}
                 </ul>
             </section>
+            {{#if product.brand}}
+                <div class="et-productView-brand">
+                    <a href="{{product.brand.url}}">View All {{product.brand.name}}</a>
+                </div>
+            {{/if}}
         </div>
         <div class="et-productView__right">
-            <section class="productView-details product-data">
+            <section>
                 <div class="productView-product">
                     <h1 class="productView-title">{{product.title}}</h1>
-                    {{#if product.brand}}
-                        <h2 class="productView-brand">
-                            <a href="{{product.brand.url}}"><span>{{product.brand.name}}</span></a>
-                        </h2>
-                    {{/if}}
+                    
                     {{#if product.call_for_price}}
                         <p class="productView-price">
                             <span>{{product.call_for_price}}</span>
@@ -220,7 +221,7 @@
                     </dl>
                 </div>
             </section>
-            <section class="productView-details product-options">
+            <section>
                 <div class="productView-options">
                     {{#if product.release_date }}
                         <p>{{product.release_date}}</p>
@@ -257,18 +258,27 @@
                         {{> components/common/wishlist-dropdown}}
                     {{/if}}
                 </div>
-                {{> components/common/share url=product.url}}
+                <!-- {{> components/common/share url=product.url}} -->
             </section>
+
+            {{> components/et-custom/payment-methods}}
+
+            <div class="et-productview-info">
+                <p>For queries contact our experts - <a href="tel:(352) 241-8399">(352) 241-8399</a></p>
+                <p><a href="mailto:questions@enjukuracing.com">questions@enjukuracing.com</a></p>
+            </div>
+
         </div>
     </div>
+</div>
 
-    <article class="productView-description">
-        {{#if theme_settings.show_product_details_tabs}}
-            {{> components/products/description-tabs}}
-        {{else}}
-            {{> components/products/description}}
-        {{/if}}
-    </article>
+
+<div class="et-description-tab-section">
+    {{#if theme_settings.show_product_details_tabs}}
+        {{> components/products/description-tabs}}
+    {{else}}
+        {{> components/products/description}}
+    {{/if}}
 </div>
 
 <div id="previewModal" class="modal modal--large" data-reveal>
