@@ -401,3 +401,5 @@ buttonMinus.on("click", function(){
         $n.val(amount-1);
     }
 });
+
+console.log("Faisal");
