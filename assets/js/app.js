@@ -402,4 +402,4 @@ buttonMinus.on("click", function(){
     }
 });
 
-console.log("Emon 2rrrrrr");
+console.log("Emon");
