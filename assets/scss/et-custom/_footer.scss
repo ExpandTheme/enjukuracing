@@ -182,13 +182,13 @@
     overflow: hidden;
     input[type="email"]{
         height: 42px;
-        border: none;
+        border: none !important;
         padding: 0 30px;
         min-width: 320px;
         line-height: 1;
     }
     input[type="submit"]{
-        border: none;
+        border: none !important;
         padding: 0 20px;
         background-color: #333;
         color: #fff;

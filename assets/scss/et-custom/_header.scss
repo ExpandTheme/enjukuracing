@@ -59,6 +59,11 @@
     font-size: 16px;
     font-weight: 600;
     color: #fff;
+    &:hover,
+    &:focus,
+    &:focus-visible {
+        color: #000000;
+    }
 }
 
 .et-user-nav{
