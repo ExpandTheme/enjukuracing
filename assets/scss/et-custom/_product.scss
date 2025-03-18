@@ -101,3 +101,12 @@
         font-weight: 500;
     }
 }
+
+.et-custom-tooltip__icon{
+    background-color: #ccc;
+    display: inline-flex;
+    svg{
+        width: 20px;
+        height: 20px;
+    }
+}
