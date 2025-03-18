@@ -12,7 +12,6 @@
 .et-login__left{
     .form-actions{
         display: flex;
-        justify-content: center;
         align-items: center;
     }
 }
@@ -98,4 +97,13 @@
     .et-login{
         display: block;
     }
+}
+
+
+/*========================================================
+    Registration page CSS
+==========================================================*/
+
+.et-reg-section {
+    padding: 50px 0;
 }

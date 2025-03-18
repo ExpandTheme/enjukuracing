@@ -29,26 +29,6 @@ a{
     outline: none !important;
     outline-offset: 0 !important;
 }
-a,
-input,
-[href],
-select,
-button:focus, 
-textarea,
-details,
-[tabindex]:not([tabindex="-1"]), 
-[contenteditable="true"] {
-    &:focus,
-    &:focus-visible {
-        outline: none !important;
-        outline-offset: 0px !important;
-    }
-}
-textarea {
-    width: 100%;
-    resize: vertical;
-}
-
 
 .et-overlay-bg{
     position: fixed;

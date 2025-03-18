@@ -1,7 +1,7 @@
 {{inject 'passwordRequirements' settings.password_requirements}}
 {{inject 'recaptchaTitle' (lang 'create_account.recaptcha_title')}}
 {{#partial "page"}}
-    <section class="et-section">
+    <section class="et-section et-reg-section">
         <div class="et-container">
             <div class="et-page-inner">
                 <div class="et-page-header">
@@ -23,7 +23,7 @@
                             {{inject 'state_error' (lang 'errors.state_error')}}
                         </div>
                         {{{ forms.create_account.recaptcha.markup}}}
-                        <input type="submit" class="button button--primary" value="{{lang 'forms.create_account.submit_value' }}" />
+                        <input type="submit" class="button et-button--primary" value="{{lang 'forms.create_account.submit_value' }}" />
                     </form>
                 {{/if}}
             </div>
