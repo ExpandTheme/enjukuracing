@@ -1,33 +1,65 @@
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-
-<main class="page">
-    {{#unless theme_settings.hide_contact_us_page_heading }}
-        <h1 class="page-heading">{{page.title}}</h1>
-    {{/unless}}
-
-    {{#if page.sub_pages}}
-        <nav class="navBar navBar--sub">
-            <ul class="navBar-section account-navigation">
-                {{#each page.sub_pages}}
-                    <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
-                {{/each}}
-            </ul>
-        </nav>
-    {{/if}}
-
-    <div id="contact-us-page" class="page-content page-content--centered">
-        {{#if forms.contact.success}}
-            <div id="contact-us-success">{{{lang 'forms.contact_us.successful' shopPath=urls.home}}}</div>
-        {{else}}
-            <p>{{{page.content}}}</p>
-            {{> components/page/contact-us-form}}
-        {{/if}}
-
+<div class="et-breadcrumbs">
+    <div class="et-container">
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
     </div>
+</div>
 
-</main>
+<section class="et-contact-us-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.092515504803!2d-81.73638372359595!3d28.566984487052594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e7657d3739ce6d%3A0x2104c6f282ef74bf!2sEnjuku%20Racing!5e0!3m2!1sen!2sbd!4v1742411477500!5m2!1sen!2sbd" width="1920" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+<section class="et-section-margin">
+    <div class="et-container">
+        <div class="et-contact-us-page-inner">
+
+            <div class="et-contact-us-address">
+                <div class="et-contact-us-address__item">
+                    <h4>Enjuku Racing Parts, LLC</h4>
+                    <ul>
+                        <li>300 Hatteras Ave <br> Clermont, FL 34711</li>
+                        <li>Monday - Friday, EST. 10:00AM - 5:00PM<br>Closed for lunch daily, EST. 12:30PM - 1:30PM</li>
+                    </ul>
+                </div>
+                <div class="et-contact-us-address__item">
+                    <h4>Sales & Order Line</h4>
+                    <ul>
+                        <li>Questions: <a href="tel:1-352-241-8399">(352) 241-8399</a></li>
+                        <li>Fax: (352)241-8363</li>
+                    </ul>
+                </div>
+
+                <div class="et-contact-us-address__item">
+                    <h4>Email Inquiries</h4>
+                    <ul>
+                        <li>General & Sales Questions: <a href="mailto:questions@enjukuracing.com">questions@enjukuracing.com</a></li>
+                        <li>Wholesale: <a href="mailto:wholesale@enjukuracing.com">wholesale@enjukuracing.com</a></li>
+                        <li>Order Status: <a href="mailto:orders@enjukuracing.com">orders@enjukuracing.com</a></li>
+                        <li>Shipping Department: <a href="mailto:shipping@enjukuracing.com">shipping@enjukuracing.com</a></li>
+                        <li>Marketing: <a href="mailto:Marketing@enjukuracing.com">Marketing@enjukuracing.com</a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="et-contact-us">
+                <div class="et-contact-us__form">
+                    {{#unless theme_settings.hide_contact_us_page_heading }}
+                        <h1 class="et-page-heading">{{page.title}}</h1>
+                    {{/unless}}
+                    {{#if forms.contact.success}}
+                        <div id="contact-us-success">{{{lang 'forms.contact_us.successful' shopPath=urls.home}}}</div>
+                    {{/if}}
+                    {{> components/page/contact-us-form}}
+                </div>
+                <div class="et-contact-us__content">
+                    {{{page.content}}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 {{/partial}}
 

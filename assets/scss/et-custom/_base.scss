@@ -39,6 +39,21 @@ a{
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
 }
-.et-page-inner{
-    padding: 0 15%;
+
+.et-overflow-hidden {
+    overflow: hidden !important;
+}
+
+.et-section-padding {
+    padding: 50px 0;
+}
+.et-section-margin {
+    margin: 50px 0;
+}
+
+.et-page-heading {
+    font-size: 28px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #000;
 }

@@ -1,0 +1,45 @@
+.et-page-inner {
+    padding: 0 15%;
+}
+
+.et-contact-us {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+}
+.et-contact-us-map {
+    overflow: hidden;
+}
+.et-contact-us-address {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.et-contact-us {
+    &__form {
+        background: #ffff;
+        padding: 24px;
+        height: fit-content;
+        position: sticky;
+        top: 40px;
+        .form-actions {
+            text-align: left;
+        }
+    }
+}
+
+.et-contact-us-address {
+    margin-bottom: 40px;
+}
+.et-contact-us-address__item {
+    h4 {
+        margin: 0;
+        font-weight: 500;
+        padding-bottom: 10px;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+}
