@@ -322,13 +322,13 @@ $('#sidebar-menu').initMM({
 $(".et-header-nav-bar").on("click", function(){
     $('.et-sidebar-category').addClass('active');
     $('.et-overlay-nav').addClass('active');
-	$('body').css('overflow', 'hidden');
+	$('body').addClass('et-overflow-hidden');
 });
 
 $(".et-overlay-nav").on("click", function(){
 	$('.et-sidebar-category').removeClass('active');
 	$('.et-overlay-nav').removeClass('active');
-	$('body').css('overflow', 'scroll');
+	$('body').removeClass('et-overflow-hidden');
 });
 
 

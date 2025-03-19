@@ -37,6 +37,11 @@
 }
 .et-brand-link{
     text-align: right;
+    a {
+        text-decoration: underline;
+        color: #e74c3c;
+        font-weight: 500;
+    }
 }
 .et-brand-logo{
     button.slick-arrow{
