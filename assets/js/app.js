@@ -431,3 +431,7 @@ $('[data-ajax-cart]').on("click", function(event){
         error: function(data) {}
     });
 });
+
+$(".et-custom-tooltip__icon").on("click", function(){
+	$(this).parent().children(".et-custom-tooltip__content").toggleClass("active");
+});

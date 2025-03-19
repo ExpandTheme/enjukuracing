@@ -6,6 +6,7 @@
 .price--non-sale,
 .price--discounted {
     text-decoration: line-through;
+    font-size: inherit !important;
 }
 
 .price-section--minor {
