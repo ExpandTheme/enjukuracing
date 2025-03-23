@@ -261,3 +261,18 @@
         border-bottom: 1px solid #ccc;
     }
 }
+.productView-info{
+    margin-bottom: 10px;
+    .productView-info-name,
+    .productView-info-value{
+        margin: 0;
+        display: inline-block;
+        font-size: 14px;
+    }
+    .productView-info-name{
+        font-weight: 700;
+    }
+}
+.productView-rating{
+    margin-bottom: 15px;
+}

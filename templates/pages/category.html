@@ -16,23 +16,23 @@ category:
 
 {{#partial "page"}}
 
+<div class="et-breadcrumbs">
+    <div class="et-container">
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+    </div>
+</div>
 
 <section class="et-category-header-section">
     <div class="et-container">
         <div class="et-category-header">
-            {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-            {{#if category.description '===' ""}}
-                <h1 class="mb-0">{{category.name}}</h1>
-            {{else}}
-                <div class="et-category-header-wrap">
-                    <div class="et-category-header__peragraph">
-                        {{{category.description}}}
-                    </div>
-                    <a class="et-read-toggle" href="#">Read More</a>
-                    <a class="et-read-less-toggle" href="#">Read Less</a>
+            <div class="et-category-header-wrap">
+                <div class="et-category-header__peragraph">
+                    <h1>{{category.name}}</h1>
+                    {{{category.description}}}
                 </div>
-            {{/if}}
-            
+                <a class="et-read-toggle" href="#">Read More</a>
+                <a class="et-read-less-toggle" href="#">Read Less</a>
+            </div>
         </div>
     </div>
 </section>
@@ -60,6 +60,22 @@ category:
             </div>
             <div class="et-category__right">
                 <main id="product-listing-container">
+                    {{#if category.subcategories}} 
+                        <div class="et-sub-category-list">
+                            {{#each category.subcategories}}
+                                <div class="et-sub-category-list__item">
+                                    <a href="{{url}}" alt="{{name}}" title="{{name}}" class="image-link">
+                                        {{#if image}}
+                                            <img class="cat-image" width="301" height="250" src="{{getImage image 'thumbnail'}}" alt="{{name}}"/>
+                                        {{else}}
+                                            <img class="no-image" src="{{cdn 'img/ProductDefault.gif'}}" alt="{{name}}"/>
+                                        {{/if}}
+                                        <h3>{{name}}</h3>
+                                    </a>
+                                </div>
+                            {{/each}}
+                        </div>
+                    {{/if}}
                     {{> components/category/product-listing}}
                     {{{region name="category_below_content"}}}
                 </main>
@@ -68,6 +84,10 @@ category:
     </div>
 </section>
 
+{{inject "categories" categories}}
+<script>
+    var jsContext = JSON.parse({{jsContext}});
+</script>
 
 {{/partial}}
 {{> layout/base}}

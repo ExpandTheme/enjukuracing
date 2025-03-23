@@ -435,3 +435,18 @@ $('[data-ajax-cart]').on("click", function(event){
 $(".et-custom-tooltip__icon").on("click", function(){
 	$(this).parent().children(".et-custom-tooltip__content").toggleClass("active");
 });
+
+
+$(".et-read-less-toggle").hide();
+$(".et-read-toggle").on("click", function(e){
+	e.preventDefault();
+	$(this).parent().children('.et-category-header__peragraph').addClass("active");
+	$(this).hide();
+	$(".et-read-less-toggle").show();
+});
+$(".et-read-less-toggle").on("click", function(f){
+	f.preventDefault();
+	$(this).parent().children(".et-category-header__peragraph").removeClass("active");
+	$(".et-read-toggle").show();
+	$(".et-read-less-toggle").hide();
+});
