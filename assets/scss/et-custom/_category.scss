@@ -251,6 +251,9 @@
     list-style: none;
     gap: 15px;
   }
+  .et-productGrid--4{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 
   .et-sub-category-list{
     display: grid;
@@ -263,13 +266,19 @@
     padding: 10px;
     border-radius: 3px;
     transition: all 300ms ease;
+    a{
+      display: block;
+      text-align: center;
+    }
     &:hover{
       border-color: #e50119;
     }
     img{
       height: 70px;
       width: auto;
+      margin: 0 auto;
       margin-bottom: 10px;
+      
     }
     h3{
       margin: 0;
@@ -347,6 +356,7 @@
       select{
         padding: 0 10px;
         border-radius: 3px !important;
+        min-width: 250px;
       }
     }
   }

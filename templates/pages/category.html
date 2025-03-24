@@ -86,14 +86,17 @@ category:
 <section class="et-category-header-section">
     <div class="et-container">
         <div class="et-category-header">
-            <div class="et-category-header-wrap">
-                <div class="et-category-header__peragraph">
-                    <h1>{{category.name}}</h1>
-                    {{{category.description}}}
+            {{#if category.description '===' ""}}
+                <h1 class="mb-0">{{category.name}}</h1>
+            {{else}}
+                <div class="et-category-header-wrap">
+                    <div class="et-category-header__peragraph">
+                        {{{category.description}}}
+                    </div>
+                    <a class="et-read-toggle" href="#">Read More</a>
+                    <a class="et-read-less-toggle" href="#">Read Less</a>
                 </div>
-                <a class="et-read-toggle" href="#">Read More</a>
-                <a class="et-read-less-toggle" href="#">Read Less</a>
-            </div>
+            {{/if}}
         </div>
     </div>
 </section>

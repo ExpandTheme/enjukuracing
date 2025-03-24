@@ -272,6 +272,29 @@
                 <p><a href="mailto:questions@enjukuracing.com">questions@enjukuracing.com</a></p>
             </div>
 
+
+            <script>
+                _affirm_config = {
+                  public_api_key: "IO3RODJXIG07RMJA",
+                  script: "https://cdn1.affirm.com/js/v2/affirm.js"
+                };
+                (function(l,g,m,e,a,f,b){var d,c=l[m]||{},h=document.createElement(f),n=document.getElementsByTagName(f)[0],k=function(a,b,c){return function(){a[b]._.push([c,arguments])}};c[e]=k(c,e,"set");d=c[e];c[a]={};c[a]._=[];d._=[];c[a][b]=k(c,a,b);a=0;for(b="set add save post open empty reset on off trigger ready setProduct".split(" ");a<b.length;a++)d[b[a]]=k(c,e,b[a]);a=0;for(b=["get","token","url","items"];a<b.length;a++)d[b[a]]=function(){};h.async=!0;h.src=g[f];n.parentNode.insertBefore(h,n);delete g[f];d(g);l[m]=c})(window,_affirm_config,"affirm","checkout","ui","script","ready");
+                   // Use your live public API Key and https://cdn1.affirm.com/js/v2/affirm.js script to point to Affirm production environment.
+                  
+                  //wait for Affirm UI to be ready
+                  affirm.ui.ready(function(){
+                   //define the Prequal JSON object
+                   var affirm_prequal_config = {
+                   "page_type": "product",
+                   "mode":"modal"
+                   };
+                   //set the Prequal configuration
+                   affirm.prequal.set(affirm_prequal_config);
+                  });
+              </script>
+
+            <p class="affirm-as-low-as" data-page-type="product" data-amount="{{multiply (toFloat product.price.without_tax.value) 100}}"></p>     
+
         </div>
     </div>
 </div>
