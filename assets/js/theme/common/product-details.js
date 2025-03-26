@@ -538,6 +538,10 @@ export default class ProductDetails extends ProductDetailsBase {
             $cartCounter.addClass('cart-count--positive');
             $body.trigger('cart-quantity-update', quantity);
 
+            console.log("hi");
+
+            $("[data-cart-preview]").trigger("click");
+
             if (onComplete) {
                 onComplete(response);
             }
