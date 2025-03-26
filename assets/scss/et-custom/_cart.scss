@@ -1,0 +1,105 @@
+.et-cart-page {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+    grid-gap: 30px;
+    
+}
+.et-cart-page__right{
+    position: sticky;
+    top: 50px;
+    align-self: start;
+}
+.et-cart-page__right-inner{
+    background-color: #fff;
+    padding: 20px 15px;
+    text-align: center;
+    border-radius: 6px;
+    h1 {
+        font-size: 26px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+    .footer-bottom-payment-icons {
+        text-align: center;
+        padding-bottom: 25px;
+    }
+}
+.cart-totals{
+    width: 100%;
+}
+.cart-header {
+    background: #fff;
+    tr th {
+        padding: 10px 15px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}
+.et-cart-totals {
+    overflow: hidden;
+}
+.et-cart-actions a.button {
+    margin: 0;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #e50119;
+}
+.cart-item-brand {
+    font-size: 12px;
+}
+.cart-item-name__label {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.cart-item-quantity {
+    .form-increment {
+        margin: 0;
+        background: #fff;
+        button {
+            border: none;
+            padding: 0 8px;
+            cursor: pointer;
+            position: relative;
+            top: 2px;
+            background-color: transparent;
+            svg {
+                width: 12px;
+                height: 12px;
+            }
+        }
+        input {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            border: none !important;
+            height: 35px !important;
+        }
+    }
+}
+.cart-remove {
+    height: 22px;
+    width: 22px;
+    background: transparent;
+    &:hover svg {
+        fill: #f00;
+    }
+}
+strong.cart-item-value {
+    font-weight: 500;
+}
+.cart-total .form-input{
+    height: 47px;
+    padding: 0 15px;
+    letter-spacing: 0;
+}

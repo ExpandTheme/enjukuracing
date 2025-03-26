@@ -6,5 +6,17 @@
         margin: 0;
         padding: 0;
         line-height: 1;
+        display: block;
+    }
+}
+
+.et-breadcrumbs--cartpage{
+    h1.page-heading{
+        margin: 0;
+        text-align: left;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 5px;
     }
 }
