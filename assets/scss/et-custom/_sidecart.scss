@@ -12,8 +12,8 @@
     }
 }
 .et-sidecart__header{
-    background-color: #2b3687;
-    border-bottom: 1px solid #232d71;
+    background-color: #e50119;
+    border-bottom: 1px solid #e50119;
     padding: 10px 20px;
     position: relative;
     h2 {
@@ -34,8 +34,8 @@
         fill: #fff;
     }
 }
-.et-previewCart-body{
-    height: calc(100vh - 232px);
+.et-previewCart-body {
+    height: calc(100vh - 220px);
     overflow-y: scroll;
     &::-webkit-scrollbar {
         width: 5px;
@@ -92,7 +92,7 @@
         text-transform: inherit;
         a {
             text-decoration: none;
-            color: #2b3687;
+            color: #e50119;
         }
     }
     .et-previewCartItem-price {
@@ -181,14 +181,15 @@
         fill: #dcdce0;
     }
     .button {
-        background: #232d71;
+        background: #e50119;
         border: none;
         border-radius: 0;
         color: #fff;
         text-transform: uppercase;
         padding: 15px 50px;
+        font-weight: 500;
         &:hover {
-            background: #20a6cb;
+            background: #000;
         }
     }
 }
@@ -265,8 +266,7 @@
     }
 }
 .et-sidecart__header{
-    background-color: #2b3687;
-    border-bottom: 1px solid #232d71;
+    background-color: #e50119;
     padding: 10px 20px;
     position: relative;
     h2 {
@@ -345,7 +345,8 @@
         text-transform: inherit;
         a {
             text-decoration: none;
-            color: #2b3687;
+            color: #444444;
+            font-weight: 500;
         }
     }
     .et-previewCartItem-price {
@@ -382,8 +383,8 @@
 
 
 .et-sidecart-footer {
-  background-color: #efffff;
-  border-top: 1px solid #bffdfd;
+  background-color: #ebebeb;
+  border-top: 1px solid #ddd;
   height: 100%;
   padding: 20px 15px;
   text-align: right;
@@ -413,8 +414,8 @@
         text-transform: uppercase;
     }
     a:hover {
-        border-color: #232d71;
-        color: #232d71;
+        border-color: #e50119;
+        color: #e50119;
     }
   }
   .button {
@@ -434,14 +435,14 @@
         fill: #dcdce0;
     }
     .button {
-        background: #232d71;
+        background: #e50119;
         border: none;
         border-radius: 0;
         color: #fff;
         text-transform: uppercase;
         padding: 15px 50px;
         &:hover {
-            background: #20a6cb;
+            background: #ebebeb;
         }
     }
 }
@@ -503,12 +504,14 @@
 }
 .et-previewCartAction-checkout{
     .button.button--small.button--primary{
-        background-color: #232d71;
+        background-color: #e50119;
         border-radius: 0;
         padding: 15px 0;
         text-transform: uppercase;
         font-size: 14px;
         border-radius: 3px;
+        border-color: #e50119;
+        font-weight: 600;
     }
 }
 

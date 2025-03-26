@@ -4,24 +4,20 @@
 
 .et-contact-us {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 40px;
+    grid-template-columns: 7fr 5fr;
+    grid-gap: 60px;
 }
 .et-contact-us-map {
     overflow: hidden;
 }
 .et-contact-us-address {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: block;
 }
 
 .et-contact-us {
     &__form {
         background: #ffff;
         padding: 24px;
-        height: fit-content;
-        position: sticky;
-        top: 40px;
         .form-actions {
             text-align: left;
         }
@@ -32,6 +28,7 @@
     margin-bottom: 40px;
 }
 .et-contact-us-address__item {
+    margin-bottom: 20px;
     h4 {
         margin: 0;
         font-weight: 500;

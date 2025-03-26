@@ -19,8 +19,8 @@
         text-transform: uppercase;
         margin-bottom: 15px;
     }
-    .footer-bottom-payment-icons {
-        text-align: center;
+    .et-footer-payment-methods {
+        justify-content: center;
         padding-bottom: 25px;
     }
 }
@@ -37,6 +37,16 @@
 }
 .et-cart-totals {
     overflow: hidden;
+    .cart-total-label strong {
+        font-weight: 600;
+        color: #555;
+    }
+    .cart-total-value {
+        font-weight: 500;
+        &.sub-total {
+            font-weight: 600;
+        }
+    }
 }
 .et-cart-actions a.button {
     margin: 0;
@@ -58,7 +68,6 @@
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     line-height: 20px;
 }
@@ -80,7 +89,6 @@
             }
         }
         input {
-            font-family: 'Montserrat', sans-serif;
             font-weight: 500;
             border: none !important;
             height: 35px !important;
@@ -102,4 +110,8 @@ strong.cart-item-value {
     height: 47px;
     padding: 0 15px;
     letter-spacing: 0;
+}
+.cart-total-grandTotal {
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
 }

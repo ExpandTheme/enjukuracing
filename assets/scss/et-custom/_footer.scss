@@ -138,6 +138,7 @@
 .et-footer-payment-methods{
     display: flex;
     gap: 10px;
+    justify-content: end;
     img{
         height: 30px;
         width: auto;
