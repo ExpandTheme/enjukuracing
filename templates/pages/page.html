@@ -1,44 +1,22 @@
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-
-<main class="page">
-    {{#unless theme_settings.hide_page_heading }}
+<div class="et-breadcrumbs et-breadcrumbs--cartpage">
+    <div class="et-container">
         <h1 class="page-heading">{{ page.title }}</h1>
-    {{/unless}}
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+    </div>
+</div>
 
-    {{#if page.sub_pages}}
-    <nav class="navBar navBar--sub">
-        <ul class="navBar-section account-navigation">
-        {{#each page.sub_pages}}
-            <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
-        {{/each}}
-        </ul>
-    </nav>
-    {{/if}}
-
-    {{{region name="page_builder_content"}}}
-
-    <div class="page-content page-content--centered">
+<section class="et-section">
+    <div class="et-container">
+        {{{region name="page_builder_content"}}}
         {{#replace '%%Syndicate%%' page.content}}
             {{> components/page/rss_feed}}
         {{else}}
             <p>{{{page.content}}}</p>
         {{/replace}}
     </div>
-
-    {{#if page.feed}}
-        <ul>
-            {{#each page.feed}}
-                <li>
-                    <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
-                    <p>{{content}}</p>
-                </li>
-            {{/each}}
-        </ul>
-    {{/if}}
-</main>
+</section>
 
 {{/partial}}
-
 {{> layout/base}}

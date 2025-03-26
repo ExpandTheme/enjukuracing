@@ -87,5 +87,10 @@ cart: true
     </div>
 </div>
 
+{{inject "categories" categories}}
+<script>
+    var jsContext = JSON.parse({{jsContext}});
+</script>
+
 {{/partial}}
 {{> layout/base}}

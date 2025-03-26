@@ -425,7 +425,7 @@ $('[data-ajax-cart]').on("click", function(event){
                 $('.et-ajax-cart-button').removeClass("active");
                 $('.cart-quantity').addClass("countPill--positive");
                 $(".cart-quantity").html(num);
-                //console.log(data);
+                console.log(num);
             });
         },
         error: function(data) {}
