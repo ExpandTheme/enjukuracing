@@ -444,24 +444,26 @@ export default class ProductDetails extends ProductDetailsBase {
                 return showAlertModal(tmp.textContent || tmp.innerText);
             }
 
+            $("[data-cart-preview]").trigger("click");
+
             // Open preview modal and update content
-            if (this.previewModal) {
-                this.previewModal.open();
+            // if (this.previewModal) {
+            //     this.previewModal.open();
 
-                if (window.ApplePaySession) {
-                    this.previewModal.$modal.addClass('apple-pay-supported');
-                }
+            //     if (window.ApplePaySession) {
+            //         this.previewModal.$modal.addClass('apple-pay-supported');
+            //     }
 
-                if (!this.checkIsQuickViewChild($addToCartBtn)) {
-                    this.previewModal.$preModalFocusedEl = $addToCartBtn;
-                }
+            //     if (!this.checkIsQuickViewChild($addToCartBtn)) {
+            //         this.previewModal.$preModalFocusedEl = $addToCartBtn;
+            //     }
 
-                this.updateCartContent(this.previewModal, response.data.cart_item.id);
-            } else {
-                this.$overlay.show();
-                // if no modal, redirect to the cart page
-                this.redirectTo(response.data.cart_item.cart_url || this.context.urls.cart);
-            }
+            //     this.updateCartContent(this.previewModal, response.data.cart_item.id);
+            // } else {
+            //     this.$overlay.show();
+            //     // if no modal, redirect to the cart page
+            //     this.redirectTo(response.data.cart_item.cart_url || this.context.urls.cart);
+            // }
         });
 
         this.setLiveRegionAttributes($addToCartBtn.next(), 'status', 'polite');
@@ -528,7 +530,7 @@ export default class ProductDetails extends ProductDetailsBase {
             const $backToShopppingBtn = $('.previewCartCheckout > [data-reveal-close]');
             const $modalCloseBtn = $('#previewModal > .modal-close');
             const bannerUpdateHandler = () => {
-                const $productContainer = $('#main-content > .container');
+                const $productContainer = $('#main-content > .et-container');
 
                 $productContainer.append('<div class="loadingOverlay pdp-update"></div>');
                 $('.loadingOverlay.pdp-update', $productContainer).show();
@@ -537,6 +539,8 @@ export default class ProductDetails extends ProductDetailsBase {
 
             $cartCounter.addClass('cart-count--positive');
             $body.trigger('cart-quantity-update', quantity);
+
+            $("[data-cart-preview]").trigger("click");
 
             if (onComplete) {
                 onComplete(response);

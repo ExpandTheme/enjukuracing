@@ -3,8 +3,9 @@
         {{lang 'search.faceted.selected.title'}}
     </h2>
 
-    {{#if items}}
-        <ul class="inlineList inlineList--labels">
+    <div class="et-inlineList-wrap">
+        {{#if items}}
+        <ul class="et-inlineList-refine">
             {{#each items}}
                 <li>
                     <a href="{{url}}"
@@ -28,10 +29,11 @@
     {{else}}
         <p>{{lang 'search.faceted.selected.no-filters'}}</p>
     {{/if}}
-
     {{#if remove_all_url}}
         <a href="{{remove_all_url}}" data-faceted-search-facet>
             {{lang 'search.faceted.selected.clear-all'}}
         </a>
     {{/if}}
+    </div>
+
 </div>

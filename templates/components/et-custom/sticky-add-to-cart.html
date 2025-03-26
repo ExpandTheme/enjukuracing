@@ -40,13 +40,9 @@
                                 <button class="et-custom-qty__btn et-custom-qty__btn-minus" type="button"><svg class="arrow arrow-down"><use xlink:href="#icon-arrow-down"></use></svg></button>
                             </div>
                         </div>
-                        {{#or customer (unless settings.hide_price_from_guests)}}
-                            <button class="et-ajax-cart-button" data-ajax-cart type="submit"> 
-                                <i class="ms-shopping-bag1"></i> Add to Cart <span class="loader"></span>
-                            </button>
-                        {{else}}
-                            <a class="et-ajax-cart-button button-disabled" href="{{urls.auth.login}}"><i class="ms-shopping-bag1"></i>Login for add to cart</a>
-                        {{/or}}
+                        <button class="et-ajax-cart-button" data-ajax-cart type="submit"> 
+                            <i class="ms-shopping-bag1"></i> Add to Cart <span class="et-loader"></span>
+                        </button>
                     </div>
                 </form>
             </div>

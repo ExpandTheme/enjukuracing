@@ -51,18 +51,21 @@
     padding: 0;
     list-style: none;
     display: flex;
-    gap: 18px;
 }
 .et-navigation-top__list-link{
     display: block;
-    padding: 10px 0;
+    padding: 10px 15px;
     font-size: 16px;
     font-weight: 600;
     color: #fff;
     &:hover,
     &:focus,
     &:focus-visible {
-        color: #000000;
+        color: #fff;
+    }
+    &:hover{
+        color: #fff;
+        background-color: #d6071b;
     }
 }
 

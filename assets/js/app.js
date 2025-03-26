@@ -426,6 +426,7 @@ $('[data-ajax-cart]').on("click", function(event){
                 $('.cart-quantity').addClass("countPill--positive");
                 $(".cart-quantity").html(num);
                 console.log(num);
+				$("[data-cart-preview]").trigger("click");
             });
         },
         error: function(data) {}
