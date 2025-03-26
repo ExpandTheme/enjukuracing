@@ -47,10 +47,5 @@ product:
     {{> components/products/schema}}
     {{> components/et-custom/sticky-add-to-cart}}
 
-    {{inject "categories" categories}}
-    <script>
-        var jsContext = JSON.parse({{jsContext}});
-    </script>
-
 {{/partial}}
 {{> layout/base}}

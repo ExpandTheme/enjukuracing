@@ -53,6 +53,11 @@
         <div class="et-overlay-side-cart"></div>
         <div class="et-overlay-nav"></div>
 
+        {{inject "categories" categories}}
+        <script>
+            var jsContext = JSON.parse({{jsContext}});
+        </script>
+
         {{> components/et-custom/icon-sprite }}
 
         {{> components/common/header }}
