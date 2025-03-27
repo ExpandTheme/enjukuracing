@@ -1,7 +1,7 @@
 {{inject 'passwordRequirements' settings.password_requirements}}
 {{inject 'recaptchaTitle' (lang 'create_account.recaptcha_title')}}
 {{#partial "page"}}
-    <section class="et-reg-section">
+    <section class="et-section">
         <div class="et-container">
             <div class="et-page-inner">
                 <div class="et-page-header">
@@ -11,8 +11,8 @@
                     {{> components/common/alert/alert-error forms.create_account.error}}
                 {{/if}}
                 {{#if settings.account_creation_enabled}}
-                    <form action="{{urls.auth.save_new_account}}" data-create-account-form method="post" class="form">
-                        <div class="form-row form-row--half">
+                    <form action="{{urls.auth.save_new_account}}" data-create-account-form method="post">
+                        <div class="et-rag-forms">
                             {{#each forms.create_account.account_fields }}
                                 {{{dynamicComponent 'components/common/forms'}}}
                             {{/each}}
@@ -23,7 +23,7 @@
                             {{inject 'state_error' (lang 'errors.state_error')}}
                         </div>
                         {{{ forms.create_account.recaptcha.markup}}}
-                        <input type="submit" class="button et-button--primary" value="{{lang 'forms.create_account.submit_value' }}" />
+                        <input type="submit" class="et-button et-button--primary" value="{{lang 'forms.create_account.submit_value' }}" />
                     </form>
                 {{/if}}
             </div>
