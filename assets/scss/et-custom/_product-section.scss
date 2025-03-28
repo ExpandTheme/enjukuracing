@@ -53,3 +53,11 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .slick-arrow {
+        &.slick-prev{
+            left: 0 !important;
+        }
+    }
+}

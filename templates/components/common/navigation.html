@@ -1,14 +1,25 @@
 <div class="et-user-nav">
 
+    <div class="et-user-nav__item mobile-only">
+        <div class="et-user-nav__item-search">
+            <svg class="et-close-icon"><use href="#et-icon-close"></use></svg>
+            <svg class="et-search-icon"><use href="#et-icon-search"></use></svg>
+        </div>
+    </div>
     <div class="et-user-nav__item">
-        <svg><use href="#et-icon-users"></use></svg>
         <div class="et-user-nav__item-account">
             {{#if customer}}
-                <a href="{{urls.account.index}}" aria-label="{{lang 'common.account'}}">{{lang 'common.account'}}</a>
+                <a href="{{urls.account.index}}" aria-label="{{lang 'common.account'}}">
+                    <svg><use href="#et-icon-users"></use></svg>
+                    {{lang 'common.account'}}
+                </a>
                 <span>{{lang 'common.or'}}</span>
                 <a href="{{urls.auth.logout}}" aria-label="{{lang 'common.logout'}}">{{lang 'common.logout'}}</a>
             {{else}}
-                <a href="{{urls.auth.login}}" aria-label="{{lang 'common.login'}}">{{lang 'common.login'}}</a>
+                <a href="{{urls.auth.login}}" aria-label="{{lang 'common.login'}}">
+                    <svg><use href="#et-icon-users"></use></svg>
+                    {{lang 'common.login'}}
+                </a>
                 {{#if settings.account_creation_enabled}}
                     <span>{{lang 'common.or'}}</span>
                     <a href="{{urls.auth.create_account}}" aria-label="{{lang 'common.sign_up'}}">{{lang 'common.sign_up'}}</a>

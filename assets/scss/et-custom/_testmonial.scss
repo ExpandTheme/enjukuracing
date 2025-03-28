@@ -101,9 +101,9 @@
         display: block;
     }
     .et-testimonial-reviews .slick-arrow.slick-prev{
-        left: 0;   
+        left: 0 !important;   
     }
     .et-testimonial-reviews .slick-arrow.slick-next{
-        right: 0;
+        right: 0 !important;
     }
 }

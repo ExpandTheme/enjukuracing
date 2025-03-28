@@ -83,6 +83,9 @@
         width: 38px;
         height: 38px;
     }
+    &.mobile-only {
+        display: none;
+    }
 }
 .et-user-nav__item-account{
     display: flex;
@@ -93,6 +96,8 @@
         text-transform: uppercase;
         font-size: 15px;
         font-weight: 600;
+        display: flex;
+        align-items: center;
     }
 }
 .et-user-nav__item-cart{
@@ -130,13 +135,81 @@
 
 @media (max-width: 768px) {
     .et-header {
-        display: block;
+        display: flex;
+        justify-content: space-between;
     }
     .et-navigation-top {
-        display: block;
         overflow-y: scroll;
+        scroll-behavior: smooth;
         li {
-            display: inline-block;
+            flex: 0 0 auto;
+        }
+        li a {
+            display: block;
+        }
+    }
+    .et-header-logo-link img {
+        height: 35px;
+        object-fit: contain;
+    }
+    .et-header-search {
+        position: absolute;
+        top: 100%;
+        background: #fff;
+        width: 100%;
+        padding: 20px;
+        left: 0;
+        z-index: 2;
+        display: none;
+    }
+    .et-user-nav {
+        gap: 0 12px;
+    }
+    .et-user-nav__item {
+        display: block;
+        svg {
+            width: 32px;
+            height: 32px;
+        }
+        &.mobile-only {
+            display: block;
+        }
+    }
+    .et-user-nav__item-account {
+        span {
+            display: none;
+        }
+        a {
+            font-size: 0;
+            text-indent: 99999;
+        }
+    }
+    .et-user-nav__item-cart {
+        display: block;
+    }
+    .et-cart-label {
+        display: none;
+    }
+    .et-user-nav__item-search {
+        svg {
+            width: 22px;
+            height: 22px;
+            position: relative;
+            top: 6px;
+        }
+        svg.et-close-icon {
+            display: none;
+            height: 18px;
+            width: 18px;
+            top: 8px;
+        }
+        &.active {
+            svg.et-close-icon {
+                display: block;
+            }
+            svg.et-search-icon {
+                display: none;
+            }
         }
     }
 }

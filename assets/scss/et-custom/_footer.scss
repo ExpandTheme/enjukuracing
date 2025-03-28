@@ -244,6 +244,9 @@
         li {
             margin-bottom: 5px;
         }
+        li:before {
+            display: none;
+        }
     }
     .et-newsletter {
         display: block;
