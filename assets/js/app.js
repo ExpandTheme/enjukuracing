@@ -451,3 +451,32 @@ $(".et-read-less-toggle").on("click", function(f){
 	$(".et-read-toggle").show();
 	$(".et-read-less-toggle").hide();
 });
+
+function toggleAccordions() {
+    if ($(window).width() <= 768) {
+        $(".et-choose-us-item__image, .et-widget-title").off("click").on("click", function () {
+            let $currentItem = $(this);
+            let $currentContent = $currentItem.next();
+
+            let isChooseUs = $currentItem.hasClass("et-choose-us-item__image");
+            let isWidget = $currentItem.hasClass("et-widget-title");
+
+            if (isChooseUs) {
+                $(".et-choose-us-item__image").not($currentItem).removeClass("active");
+                $(".et-choose-us-item__content").not($currentContent).slideUp();
+            } else if (isWidget) {
+                $(".et-widget-title").not($currentItem).removeClass("active");
+                $(".et-widget-menu").not($currentContent).slideUp();
+            }
+
+            $currentItem.toggleClass("active");
+            $currentContent.slideToggle();
+        });
+    } else {
+        $(".et-choose-us-item__image, .et-widget-title").off("click");
+    }
+}
+
+$(document).ready(toggleAccordions);
+
+$(window).resize(toggleAccordions);
