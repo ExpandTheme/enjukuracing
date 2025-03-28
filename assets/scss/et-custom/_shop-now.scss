@@ -20,3 +20,15 @@
         line-height: 36px;
     }
 }
+
+@media (max-width: 768px) {
+    .et-shopnow-section {
+        padding: 48px 24px;
+    }
+    .et-shopnow {
+        display: block;
+        &__image {
+            margin-bottom: 24px;
+        }
+    }
+}

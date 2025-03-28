@@ -293,3 +293,37 @@
   font-weight: 500;
   font-size: 16px;
 }
+
+
+
+@media (max-width: 768px) {
+  .et-card-body {
+    padding: 10px;
+  }
+  .et-card-action-wrap .et-card-qty-atc {
+    display: block;
+  }
+  .et-custom-qty {
+    margin-bottom: 8px;
+    display: block;
+    input {
+      width: 100%;
+    }
+    button {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: fit-content;
+      padding: 5px;
+      z-index: 1;
+      &.et-custom-qty__btn-plus {
+        left: unset;
+        right: 0;
+        svg {
+          position: relative;
+          top: -5px;
+        }
+      }
+    }
+  }
+}

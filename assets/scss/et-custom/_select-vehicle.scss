@@ -37,3 +37,9 @@
         display: block;
     }
 }
+
+@media (max-width: 768px) {
+    .et-select-vehicle {
+        padding: 24px;
+    }
+}

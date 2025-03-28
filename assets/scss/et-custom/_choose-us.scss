@@ -13,6 +13,9 @@
         min-height: 70px;
         width: auto;
     }
+    .mobile-only {
+        display: none;
+    }
 }
 .et-choose-us-item__content{
     h3{
@@ -24,5 +27,43 @@
         margin-bottom: 10px;
         font-size: 16px;
         line-height: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .et-choose-us-item {
+        display: block;
+    }
+    .et-choose-us-item__image {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 0 8px;
+        padding-right: 40px;
+        img {
+            width: auto;
+            height: 48px;
+            min-height: unset;
+        }
+        h3.mobile-only {
+            display: block;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin: 0;
+        }
+        svg.mobile-only {
+            display: block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 24px;
+            fill: #555;
+        }
+    }
+    .et-choose-us-item__content {
+        display: none;
+        h3 {
+            display: none;
+        }
     }
 }

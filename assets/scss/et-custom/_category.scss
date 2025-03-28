@@ -178,14 +178,17 @@
     text-align: left;
     width: 100%;
     line-height: 1;
-    color: #2b3687;
+    color: #e50119;
     font-weight: 500;
+    &:hover {
+      color: #e50119;
+    }
   }
   .et-read-less-toggle{
     width: 100%;
     position: absolute;
     bottom: 0;
-    color: #2b3687;
+    color: #e50119;
     font-weight: 500;
   }
   .et-category-header{
@@ -299,6 +302,12 @@
   }
   .form-fieldset.actionBar-section{
     float: right;
+    .form-field {
+      border: 1px solid #dddddd;
+      .form-select {
+        border: none !important;
+      }
+    }
   }
 
   .et-select-vehicle-vertical-section{

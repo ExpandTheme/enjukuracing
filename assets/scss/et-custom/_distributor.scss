@@ -41,3 +41,13 @@
         line-height: 1;
     }
 }
+
+@media (max-width: 768px) {
+    .et-distributor {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        &__left {
+            order: 2;
+        }
+    }
+}

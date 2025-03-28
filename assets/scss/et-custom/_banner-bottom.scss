@@ -14,3 +14,15 @@
         margin: 0;
     }
 }
+
+@media (max-width: 768px) {
+    .et-banner-bottom-section {
+        padding: 24px 0;
+    }
+    .et-banner-bottom {
+        padding: 20px;
+        h3 {
+            line-height: normal;
+        }
+    }
+}

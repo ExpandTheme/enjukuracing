@@ -32,3 +32,28 @@
         font-weight: 500;
     }
 }
+
+@media (max-width: 768px) {
+    .et-main-banner {
+        display: block;
+    }
+    .et-banner-item {
+        &__content {
+            position: relative;
+            top: unset;
+            transform: unset;
+            left: unset;
+            padding: 24px;
+            .brand-logo img {
+                width: auto;
+                height: 60px;
+            }
+            h2 {
+                font-size: 26px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}

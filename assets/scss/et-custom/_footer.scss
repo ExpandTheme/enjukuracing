@@ -199,3 +199,47 @@
         font-weight: 600;
     }
 }
+
+@media (max-width: 768px) {
+    .et-footer {
+        display: block;
+    }
+    .et-widget {
+        margin-bottom: 20px;
+    }
+    .et-footer-bottom {
+        display: block;
+        text-align: center;
+    }
+    .et-footer-middle-nav {
+        display: block;
+        li {
+            margin-bottom: 5px;
+        }
+    }
+    .et-newsletter {
+        display: block;
+    }
+    .et-newsletter-content {
+        display: block;
+        margin-bottom: 16px;
+    }
+    .et-newsletter-form {
+        display: block;
+        border-radius: 0;
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 0;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+        }
+    }
+    .et-footer-payment-methods {
+        justify-content: center;
+    }
+}

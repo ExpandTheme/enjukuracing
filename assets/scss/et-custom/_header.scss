@@ -125,3 +125,18 @@
     font-size: 15px;
     font-weight: 600;
 }
+
+
+
+@media (max-width: 768px) {
+    .et-header {
+        display: block;
+    }
+    .et-navigation-top {
+        display: block;
+        overflow-y: scroll;
+        li {
+            display: inline-block;
+        }
+    }
+}

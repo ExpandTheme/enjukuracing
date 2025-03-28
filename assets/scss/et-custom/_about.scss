@@ -31,3 +31,13 @@
         line-height: 28px;
     }
 }
+
+@media (max-width: 768px) {
+    .et-about-enjuku {
+        display: block;
+        padding: 24px;
+        &__image {
+            margin-bottom: 28px;
+        }
+    }
+}
