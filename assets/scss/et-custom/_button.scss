@@ -13,7 +13,7 @@
     color: #fff;
     text-transform: uppercase;
     font-weight: 500;
-    padding: 15px;
+    padding: 15px 25px;
     border-radius: 5px !important;
     &:hover {
         background-color: #cd0317;
@@ -21,8 +21,6 @@
         color: #fff;
     }
 }
-.et-button--secondary{}
-
 .et-button--outline{
     border: 1px solid #ccc;
     color: #fff;
