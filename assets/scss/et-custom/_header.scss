@@ -131,9 +131,19 @@
     font-weight: 600;
 }
 
+.et-header-sticky-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    background: #fff;
+}
+
 
 
 @media (max-width: 768px) {
+    .et-header-top-section {
+        display: none;
+    }
     .et-header {
         display: flex;
         justify-content: space-between;
