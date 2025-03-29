@@ -301,15 +301,16 @@
         gap: 5px;
         a{
             border: 1px solid #ccc;
-            width: 35px;
-            height: 35px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             svg{
-                width: 20px;
-                height: 20px;
+                width: 18px;
+                height: 18px;
+                fill: #000;
             }
         }
     }
