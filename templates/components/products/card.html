@@ -161,8 +161,14 @@
                         <div class="et-custom-qty">
                             <input class="et-custom-qty__input" name="qty[]" step="1" type="tel" value="1" data-quantity-min="0" data-quantity-max="0" min="1" pattern="[0-9]*" aria-live="polite">
                             <div class="et-custom-qty__btn-wrap">
-                                <button class="et-custom-qty__btn et-custom-qty__btn-plus" type="button"><svg class="arrow arrow-up"><use xlink:href="#icon-arrow-down"></svg></button>
-                                <button class="et-custom-qty__btn et-custom-qty__btn-minus" type="button"><svg class="arrow arrow-down"><use xlink:href="#icon-arrow-down"></svg></button>
+                                <button class="et-custom-qty__btn et-custom-qty__btn-plus" type="button">
+                                    <svg class="arrow arrow-up"><use xlink:href="#icon-arrow-down"></svg>
+                                    <svg class="mobile-only et-plus"><use xlink:href="#et-icon-plus"></svg>
+                                </button>
+                                <button class="et-custom-qty__btn et-custom-qty__btn-minus" type="button">
+                                    <svg class="arrow arrow-down"><use xlink:href="#icon-arrow-down"></svg>
+                                    <svg class="mobile-only et-minus"><use xlink:href="#et-icon-minus"></svg>
+                                </button>
                             </div>
                         </div>
                         {{#if show_cart_action}}

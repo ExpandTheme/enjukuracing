@@ -8,21 +8,23 @@
     </div>
 </section>
 
-<header class="et-header-section">
-    <div class="et-container">
-        <div class="et-header">
-            {{> components/common/store-logo}}
-            {{> components/common/quick-search}}
-            {{> components/common/navigation}} 
+<div class="et-header-sticky-wrap">
+    <header class="et-header-section">
+        <div class="et-container">
+            <div class="et-header">
+                {{> components/common/store-logo}}
+                {{> components/common/quick-search}}
+                {{> components/common/navigation}} 
+            </div>
         </div>
-    </div>
-</header>
-
-<section class="et-navigation-section">
-    <div class="et-container">
-        {{> components/et-custom/navigation-menu-top}}
-    </div>
-</section>
+    </header>
+    
+    <section class="et-navigation-section">
+        <div class="et-container">
+            {{> components/et-custom/navigation-menu-top}}
+        </div>
+    </section>
+</div>
 
 
 <div class="et-sidebar-category">
