@@ -118,3 +118,38 @@ strong.cart-item-value {
 .cart-form.coupon-code .button {
     height: 47px;
 }
+
+.et-free-shipping-progress-v1{
+    margin-bottom: 30px;
+}
+.et-free-shipping-progress-v1__inner{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+.et-free-shipping-progress-v1__bar{
+    width: 100%;
+    background-color: #ddd;
+    overflow: hidden;
+    border-radius: 30px;
+    height: 15px;
+    position: relative;
+}
+.et-free-shipping-progress-v1__label{
+    display: block;
+}
+.et-free-shipping-progress-v1__bar-inner{
+    position: absolute;
+    height: 100%;
+    width: 0;
+    &.red{
+        background-color: red;
+    }
+    &.green{
+        background-color: green;
+    }
+    &.yellow{
+        background-color: yellow;
+    }
+}

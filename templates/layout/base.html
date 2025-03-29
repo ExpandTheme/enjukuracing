@@ -48,6 +48,10 @@
         {{~inject 'carouselActiveDotAriaLabel' (lang 'carousel.active_dot_aria_label')}}
         {{~inject 'carouselContentAnnounceMessage' (lang 'carousel.content_announce_message')}}
         {{~inject 'giftWrappingRemoveMessage' (lang 'cart.gift_wrapping.remove_confirm')}}
+        {{~inject 'token' settings.storefront_api.token}}
+        {{~inject 'themeSettings' theme_settings}}
+        {{~inject 'money' settings.money}}
+        {{~inject 'cartTotal' cart.grand_total.value}}
     </head>
     <body>
         <div class="et-overlay-side-cart"></div>

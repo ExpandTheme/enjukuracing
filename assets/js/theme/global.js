@@ -12,6 +12,7 @@ import quickView from './global/quick-view';
 import cartPreview from './global/cart-preview';
 import carousel from './common/carousel';
 import svgInjector from './global/svg-injector';
+import freeShippingProgress from "./global/free-shipping-progress";
 
 
 export default class Global extends PageManager {
@@ -26,8 +27,12 @@ export default class Global extends PageManager {
         menu();
         mobileMenuToggle();
         svgInjector();
+        freeShippingProgress(this.context, '');
     }
 }
+
+
+
 
 var fstCat = jsContext.categories;
 var ShopByVehicle = fstCat[14]?.children || [];
