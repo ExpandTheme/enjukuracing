@@ -97,6 +97,7 @@
     max-width: 70%;
     position: relative;
     margin-top: 30px;
+    margin-bottom: 15px;
     p{
         margin: 0;
         font-size: 18px;
@@ -275,4 +276,41 @@
 }
 .productView-rating{
     margin-bottom: 15px;
+}
+.et-productview-payment-methods{
+    .et-footer-payment-methods{
+        justify-content: left;
+    }
+}
+
+.et-icon-social-share{
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+    gap: 10px;
+    span{
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        a{
+            border: 1px solid #ccc;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg{
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
 }

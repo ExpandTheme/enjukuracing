@@ -1,10 +1,11 @@
 {{#if settings.add_this.buttons}}
     {{assignVar 'encodedUrl' (encodeURI url)}}
     {{assignVar 'encodedTitle' (encodeURI head.title)}}
-    <div>
-        <ul class="socialLinks">
+    <div class="et-icon-social-share">
+        <span>Share:</span>
+        <ul>
             {{#each settings.add_this.buttons}}
-                <li class="socialLinks-item socialLinks-item--{{service}}">
+                <li class="{{service}}">
                     {{#if service '===' 'facebook'}}
                     <a class="socialLinks__link icon icon--{{service}}"
                        title="{{{capitalize service}}}"
@@ -15,7 +16,7 @@
                     >
                         <span class="aria-description--hidden">{{{capitalize service}}}</span>
                         <svg>
-                            <use href="#icon-facebook"/>
+                            <use href="#et-icon-facebook2"/>
                         </svg>
                     </a>
                     {{else if service '===' 'email'}}
@@ -28,7 +29,7 @@
                     >
                         <span class="aria-description--hidden">{{{capitalize service}}}</span>
                         <svg>
-                            <use href="#icon-envelope"/>
+                            <use href="#et-icon-envelope"/>
                         </svg>
                     </a>
                     {{else if service '===' 'print'}}
@@ -39,7 +40,7 @@
                     >
                         <span class="aria-description--hidden">{{{capitalize service}}}</span>
                         <svg>
-                            <use href="#icon-print"/>
+                            <use href="#et-icon-print"/>
                         </svg>
                     </a>
                     {{else if service '===' 'twitter'}}
@@ -52,7 +53,7 @@
                     >
                         <span class="aria-description--hidden">X</span>
                         <svg>
-                            <use href="#icon-x"/>
+                            <use href="#et-icon-x"/>
                         </svg>
                     </a>
                     {{else if service '===' 'linkedin'}}
@@ -61,11 +62,10 @@
                        href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{getVar 'encodedUrl'}}&amp;title={{getVar 'encodedTitle'}}&amp;summary={{getVar 'encodedTitle'}}&amp;source={{getVar 'encodedUrl'}}"
                        target="_blank"
                        rel="noopener"
-                       {{{annotation}}}
-                    >
+                       {{{annotation}}}>
                         <span class="aria-description--hidden">{{{capitalize service}}}</span>
                         <svg>
-                            <use href="#icon-linkedin"/>
+                            <use href="#et-icon-linkedin"/>
                         </svg>
                     </a>
                     {{else if service '===' 'pinterest'}}
@@ -78,7 +78,7 @@
                     >
                         <span class="aria-description--hidden">{{{capitalize service}}}</span>
                         <svg>
-                            <use href="#icon-pinterest"/>
+                            <use href="#et-icon-pinterest"/>
                         </svg>
                     </a>
                     {{/if}}

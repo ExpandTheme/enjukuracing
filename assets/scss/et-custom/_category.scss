@@ -113,6 +113,10 @@
     button{
       margin: 0 !important;
       padding: 8px 15px;
+      svg{
+        width: 12px;
+        height: 12px;
+      }
     }
     .accordion-content{
       padding: 0 15px;
@@ -427,5 +431,10 @@
   list-style: none;
   li{
     margin: 0;
+  }
+}
+.et-card-text{
+  .affirm-banner{
+    display: none;
   }
 }
