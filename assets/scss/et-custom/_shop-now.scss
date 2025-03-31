@@ -23,12 +23,22 @@
 
 @media (max-width: 768px) {
     .et-shopnow-section {
-        padding: 48px 24px;
+        padding: 24px 0;
     }
     .et-shopnow {
         display: block;
         &__image {
             margin-bottom: 24px;
+            img {
+                height: 200px;
+                object-fit: contain;
+            }
+        }
+        &__content {
+            h4 {
+                font-size: 20px;
+                line-height: 130%;
+            }
         }
     }
 }

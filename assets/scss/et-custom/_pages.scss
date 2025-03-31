@@ -59,3 +59,17 @@
     }
 }
 
+
+
+@media (max-width: 768px) {
+    .et-contact-us {
+        grid-gap: 0;
+        grid-template-columns: 1fr;
+        &__content {
+            order: 1;
+        }
+        &__form {
+            order: 2;
+        }
+    }
+}

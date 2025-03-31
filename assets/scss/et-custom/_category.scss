@@ -438,3 +438,30 @@
     display: none;
   }
 }
+
+
+@media (max-width: 768px) {
+  .et-select-vehicle-form {
+    display: block;
+    .et-form-select {
+      margin-bottom: 8px;
+    }
+  }
+  .et-select-vehicle-vertical .et-select-vehicle-tab-nav a {
+    text-align: center;
+    line-height: 130%;
+    padding: 10px;
+  }
+  .et-category-wrap {
+    display: block;
+  }
+  .facetedSearch-toggle {
+    margin-bottom: 0;
+  }
+  .et-sub-category-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .et-productGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

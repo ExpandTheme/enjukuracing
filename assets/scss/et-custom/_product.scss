@@ -315,3 +315,30 @@
         }
     }
 }
+
+
+@media (max-width: 768px) {
+    .et-productView {
+        display: block;
+    }
+    .et-productView__left {
+        margin-bottom: 16px;
+    }
+    .et-productview-payment-methods .et-footer-payment-methods {
+        justify-content: center;
+        gap: 0 8px;
+        img {
+            height: 28px;
+        }
+    }
+    .form.form-wishlist.form-action {
+        margin: 0;
+    }
+    .et-productview-info {
+        max-width: 100%;
+        padding: 15px 10px 15px 25px;
+    }
+    .et-productView-thumbnail {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

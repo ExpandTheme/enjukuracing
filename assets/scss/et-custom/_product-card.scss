@@ -345,5 +345,7 @@
       width: 100%;
     }
   }
-
+  .et-card-text[data-test-info-type="price"] {
+    display: block;
+  }
 }
