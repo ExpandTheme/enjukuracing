@@ -36,14 +36,14 @@
     }
 }
 
-@media (max-width: 1399.98px) {
+@media (min-width: 1200px) and (max-width: 1399.98px) {
     .et-main-banner {
         grid-template-columns: 8fr 4fr;
         min-height: 350px;
     }
 }
 
-@media (max-width: 1199.98px) {
+@media (min-width: 768px) and (max-width: 1199.98px) {
     .et-main-banner {
         grid-template-columns: 8fr 4fr;
         min-height: 300px;
@@ -51,7 +51,7 @@
     .et-banner-item__content {
         .brand-logo img {
             width: auto;
-            height: 50px;
+            height: 70px;
         }
     }
     .et-banner-item {
