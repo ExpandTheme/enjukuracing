@@ -1,6 +1,6 @@
 .et-select-vehicle{
     background-color: #fff;
-    padding: 40px 60px;
+    padding: 36px;
 }
 .et-form-select{
     margin-bottom: 10px;
@@ -35,6 +35,12 @@
     display: none;
     &.active{
         display: block;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .et-select-vehicle {
+        padding: 16px;
     }
 }
 

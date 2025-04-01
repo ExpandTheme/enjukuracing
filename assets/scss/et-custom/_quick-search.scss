@@ -18,3 +18,33 @@
         height: 20px;
     }
 }
+
+.et-search-nav-section {
+    padding-bottom: 0;
+}
+
+.et-search-nav {
+    background: #fff;
+    padding: 24px;
+    .page-heading {
+        text-transform: uppercase;
+        margin-bottom: 24px;
+    }
+}
+
+.et-search-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    &__item {
+        display: inline-block;
+        a {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        a.navBar-action-color--active {
+            color: #e50119;
+        }
+    }
+}

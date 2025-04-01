@@ -168,11 +168,7 @@ export default class Search extends CatalogPage {
 
         $('[data-search-page-tabs]').on('keyup', this.onTabChangeWithArrows);
 
-        if (this.$productListingContainer.find('li.product').length === 0 || url.query.section === 'content') {
-            this.showContent(false);
-        } else {
-            this.showProducts(false);
-        }
+        this.showProducts(false);
 
         const validator = this.initValidation($searchForm)
             .bindValidation($searchForm.find('#search_query_adv'));

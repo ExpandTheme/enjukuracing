@@ -1,14 +1,17 @@
 .et-main-banner{
     display: grid;
-    grid-template-columns: 3fr 520px;
+    grid-template-columns: 9fr 3fr;
 }
 .et-banner-item{
    position: relative;
+   height: 100%;
 }
 .et-banner-item__image{
+    height: 100%;
     img{
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
     }
 }
 .et-banner-item__content{
@@ -30,6 +33,37 @@
     p {
         font-size: 20px;
         font-weight: 500;
+    }
+}
+
+@media (max-width: 1399.98px) {
+    .et-main-banner {
+        grid-template-columns: 8fr 4fr;
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .et-main-banner {
+        grid-template-columns: 8fr 4fr;
+        min-height: 300px;
+    }
+    .et-banner-item__content {
+        .brand-logo img {
+            width: auto;
+            height: 50px;
+        }
+    }
+    .et-banner-item {
+        height: 100%;
+    }
+    .et-banner-item__image {
+        height: 100%;
+        img {
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 }
 

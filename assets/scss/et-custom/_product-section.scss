@@ -1,6 +1,15 @@
 .et-product-section{
     padding: 50px 0;
+    .productCarousel {
+        margin: 0;
+        .productCarousel-slide {
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0 8px;
+        }
+    }
 }
+
 .slick-dots{
     bottom: -50px;
     li{
@@ -58,6 +67,11 @@
     .slick-arrow {
         &.slick-prev{
             left: 0 !important;
+        }
+    }
+    .et-product-section {
+        .productCarousel .productCarousel-slide {
+            margin: 0 4px;
         }
     }
 }

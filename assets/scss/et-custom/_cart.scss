@@ -153,3 +153,18 @@ strong.cart-item-value {
         background-color: yellow;
     }
 }
+
+.cart-additionalCheckoutButtons {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding-top: 20px;
+}
+
+
+
+@media (max-width: 768px) {
+    .et-cart-page {
+        display: block;
+    }
+}
