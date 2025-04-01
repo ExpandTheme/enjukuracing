@@ -35,7 +35,7 @@ export default class Global extends PageManager {
 
 
 var fstCat = jsContext.categories;
-var ShopByVehicle = fstCat[14]?.children || [];
+var ShopByVehicle = fstCat[10]?.children || [];
 var selectedValue = "";
 
 // Initially hide the reset buttons
@@ -115,7 +115,7 @@ $("#resetVehicle").on("click", function () {
 });
 
 // Universal Part Selection
-var UniversalParts = fstCat[15]?.children[3]?.children || []; // Fetch Universal Parts
+var UniversalParts = fstCat[11]?.children[3]?.children || []; // Fetch Universal Parts
 var selectedUniversalPart = ""; // Variable to store selected universal part
 
 // Populate Universal Part dropdown
@@ -152,7 +152,7 @@ $("#resetUniversal").on("click", function () {
 });
 
 // Brand and Part Selection
-var BrandParts = fstCat[3]?.children || []; // Assuming index 16 for Brand categories
+var BrandParts = fstCat[12]?.children || []; // Assuming index 16 for Brand categories
 var selectedBrand = ""; // Variable to store selected brand
 var selectedPart = ""; // Variable to store selected part
 
