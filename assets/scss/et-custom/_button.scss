@@ -37,6 +37,11 @@
         color: #000;
     }
 }
+.et-button--disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
 .et-button--large {
     padding: 14px 22px;
     font-size: 16px;
