@@ -39,7 +39,7 @@ var ShopByVehicle = fstCat[10]?.children || [];
 var selectedValue = "";
 
 // Initially hide the reset buttons
-$('#resetVehicle, #resetBrand').hide();
+$('#resetVehicle, #resetBrand').prop("disabled", true);
 
 // Populate first dropdown (Make)
 $.each(ShopByVehicle, function (key, value) {
@@ -110,7 +110,7 @@ $("#resetVehicle").on("click", function () {
     selectedValue = "";
 
     // Hide reset button after resetting
-    $('#resetVehicle').hide();
+    $('#resetVehicle').prop("disabled", true);
     toggleResetVehicleButton();  // Ensure reset button is hidden if no options are selected
 });
 
@@ -217,26 +217,26 @@ $("#resetBrand").on("click", function () {
 // Function to toggle reset button visibility for Vehicle
 function toggleResetVehicleButton() {
     if ($('#make').val() !== '-1' || $('#model').val() !== '-1' || $('#part').val() !== '-1') {
-        $('#resetVehicle').show(); // Show reset button if any option is selected
+        $('#resetVehicle').prop("disabled", false); // Show reset button if any option is selected
     } else {
-        $('#resetVehicle').hide(); // Hide reset button if no options are selected
+        $('#resetVehicle').prop("disabled", true); // Hide reset button if no options are selected
     }
 }
 
 // Function to toggle reset button visibility for Universal Part
 function toggleResetUniversalPartButton() {
     if ($('#universalPart').val() !== '-1') {
-        $('#resetUniversal').show(); // Show reset button if a universal part is selected
+        $('#resetUniversal').prop("disabled", false); // Show reset button if a universal part is selected
     } else {
-        $('#resetUniversal').hide(); // Hide reset button if no universal part is selected
+        $('#resetUniversal').prop("disabled", true); // Hide reset button if no universal part is selected
     }
 }
 
 // Function to toggle reset button visibility for Brand
 function toggleResetBrandButton() {
     if ($('#selectBrand').val() !== '-1' || $('#selectPart').val() !== '-1') {
-        $('#resetBrand').show(); // Show reset button if any option is selected in Brand or Part dropdown
+        $('#resetBrand').prop("disabled", false); // Show reset button if any option is selected in Brand or Part dropdown
     } else {
-        $('#resetBrand').hide(); // Hide reset button if no options are selected
+        $('#resetBrand').prop("disabled", true); // Hide reset button if no options are selected
     }
 }

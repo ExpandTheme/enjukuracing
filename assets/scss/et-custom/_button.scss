@@ -37,7 +37,8 @@
         color: #000;
     }
 }
-.et-button--disabled {
+.et-button--disabled,
+button[disabled] {
     opacity: 0.2;
     cursor: not-allowed;
 }
