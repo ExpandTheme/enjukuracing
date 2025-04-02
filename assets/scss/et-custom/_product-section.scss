@@ -1,11 +1,12 @@
 .et-product-section{
     padding: 50px 0;
     .productCarousel {
-        margin: 0;
+        margin: 0 auto;
         .productCarousel-slide {
             padding-left: 0;
             padding-right: 0;
             margin: 0 8px;
+            width: 23.70%;
         }
     }
 }
