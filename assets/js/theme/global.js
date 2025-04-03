@@ -35,7 +35,15 @@ export default class Global extends PageManager {
 
 
 var fstCat = jsContext.categories;
-var ShopByVehicle = fstCat[10]?.children || [];
+var ShopByVehicle = [
+    ...(fstCat[1]), 
+    ...(fstCat[4]), 
+    ...(fstCat[5]), 
+    ...(fstCat[6]),
+    ...(fstCat[8]), 
+    ...(fstCat[9]),
+    ...(fstCat[10]?.children || [])
+];
 var selectedValue = "";
 
 // Initially hide the reset buttons
