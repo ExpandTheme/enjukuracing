@@ -227,15 +227,17 @@
 }
 .productView-options .add-to-cart-buttons #form-action-addToCart {
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 18px;
+    letter-spacing: 1px;
     font-weight: 600;
     border-radius: 0;
     background-color: #e12929;
     border-color: #e12929;
-    padding: 15px 30px
+    padding: 15px 30px;
+    font-family: "Barlow Condensed",sans-serif;
 }
 .productView-options {
-    margin-bottom: 10px
+    margin-bottom: 24px
 }
 .form.form-wishlist.form-action{
     margin: 0;
@@ -313,6 +315,15 @@
                 fill: #000;
             }
         }
+    }
+}
+
+.et-call-for-pricing {
+    width: 50%;
+    float: left;
+    .et-button {
+        width: 100%;
+        text-align: center;
     }
 }
 

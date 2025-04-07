@@ -1,3 +1,8 @@
+{{#if product.call_for_price}}
+    <div class="et-call-for-pricing">
+        <a href="mailto:questoins@enjukuracing.com?subject={{product.title}}" class="et-button et-button--secondary et-button--large"><span>{{product.call_for_price}}</span></a>
+    </div>
+{{/if}}
 <div id="add-to-cart-wrapper" class="add-to-cart-wrapper" {{#unless product.can_purchase}}style="display: none"{{/unless}}>
     {{#if product.show_quantity_input}}
         {{inject 'productQuantityErrorMessage'  (lang 'products.quantity_error_message')}}

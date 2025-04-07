@@ -27,6 +27,7 @@
     display: flex;
     gap: 20px;
     align-items: center;
+    justify-content: space-between;
 }
 .et-sticky-cart__content{
     h1{
@@ -44,10 +45,14 @@
     }
 }
 .et-sticky-cart__content{
-    min-width: 72%;
+    min-width: 65%;
 }
 .et-sticky-cart__action{
-    min-width: 200px;
+    min-width: 300px;
+    .et-call-for-pricing {
+        width: 100%;
+        float: unset;
+    }
 }
 .et-sticky-cart-wrap{
     display: flex;

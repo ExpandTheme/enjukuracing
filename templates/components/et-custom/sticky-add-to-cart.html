@@ -23,28 +23,34 @@
                 {{#if product.release_date }}
                     <p>{{product.release_date}}</p>
                 {{/if}}
-                <form method="post" action="{{product.cart_url}}" enctype="multipart/form-data">
-                    <input type="hidden" name="action" value="add">
-                    <input type="hidden" name="product_id" value="{{product.id}}"/>
-                    <div data-product-option-change style="display:none;">
-                        {{inject 'showSwatchNames' theme_settings.show_product_swatch_names}}
-                        {{#each product.options}}
-                            {{{dynamicComponent 'components/products/options'}}}
-                        {{/each}}
+                {{#if product.call_for_price}}
+                    <div class="et-call-for-pricing">
+                        <a href="mailto:questoins@enjukuracing.com?subject={{product.title}}" class="et-button et-button--secondary et-button--large"><span>{{product.call_for_price}}</span></a>
                     </div>
-                    <div class="et-sticky-cart-wrap">
-                        <div class="et-custom-qty">
-                            <input class="et-custom-qty__input" id="qty[]" name="qty[]" type="tel" value="1" data-quantity-min="0" data-quantity-max="0" min="1" pattern="[0-9]*" aria-live="polite">
-                            <div class="et-custom-qty__btn-wrap">
-                                <button class="et-custom-qty__btn et-custom-qty__btn-plus" type="button"><svg class="arrow arrow-up"><use xlink:href="#icon-arrow-down"></use></svg></button>
-                                <button class="et-custom-qty__btn et-custom-qty__btn-minus" type="button"><svg class="arrow arrow-down"><use xlink:href="#icon-arrow-down"></use></svg></button>
-                            </div>
+                {{else}}
+                    <form method="post" action="{{product.cart_url}}" enctype="multipart/form-data">
+                        <input type="hidden" name="action" value="add">
+                        <input type="hidden" name="product_id" value="{{product.id}}"/>
+                        <div data-product-option-change style="display:none;">
+                            {{inject 'showSwatchNames' theme_settings.show_product_swatch_names}}
+                            {{#each product.options}}
+                                {{{dynamicComponent 'components/products/options'}}}
+                            {{/each}}
                         </div>
-                        <button class="et-ajax-cart-button" data-ajax-cart type="submit"> 
-                            <i class="ms-shopping-bag1"></i> Add to Cart <span class="et-loader"></span>
-                        </button>
-                    </div>
-                </form>
+                        <div class="et-sticky-cart-wrap">
+                            <div class="et-custom-qty">
+                                <input class="et-custom-qty__input" id="qty[]" name="qty[]" type="tel" value="1" data-quantity-min="0" data-quantity-max="0" min="1" pattern="[0-9]*" aria-live="polite">
+                                <div class="et-custom-qty__btn-wrap">
+                                    <button class="et-custom-qty__btn et-custom-qty__btn-plus" type="button"><svg class="arrow arrow-up"><use xlink:href="#icon-arrow-down"></use></svg></button>
+                                    <button class="et-custom-qty__btn et-custom-qty__btn-minus" type="button"><svg class="arrow arrow-down"><use xlink:href="#icon-arrow-down"></use></svg></button>
+                                </div>
+                            </div>
+                            <button class="et-ajax-cart-button" data-ajax-cart type="submit"> 
+                                <i class="ms-shopping-bag1"></i> Add to Cart <span class="et-loader"></span>
+                            </button>
+                        </div>
+                    </form>
+                {{/if}}
             </div>
         </div>
     </div>
