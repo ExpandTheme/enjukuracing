@@ -436,10 +436,6 @@
           "home_garden"
         ]
       },
-<<<<<<< HEAD
-      "images": {},
-      "settings": {}
-=======
       "images": {
       },
       "settings": {
@@ -805,7 +801,6 @@
           "amazonpay"
         ]
       }
->>>>>>> 93f4929957d751fd19d9b75cd069df45595594ef
     },
     {
       "name": "Bold",
