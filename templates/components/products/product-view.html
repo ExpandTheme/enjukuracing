@@ -207,9 +207,11 @@
                     </div>
                 {{/if}}
 
+                {{!--
                 {{#if theme_settings.show_custom_fields_tabs '!==' true}}
                     {{> components/products/custom-fields }}
                 {{/if}}
+                --}}
             </dl>
 
             <div class="productView-options">
@@ -254,25 +256,22 @@
                 {{> components/et-custom/payment-methods}}
             </div>
 
-            <div class="et-productview-info">
+            <div class="et-productview-tooltip">
                 <div class="et-custom-tooltip">
                     <span class="et-custom-tooltip__icon"><svg><use href="#et-icon-info"></use></svg></span>
                     <div class="et-custom-tooltip__content">
                        <p>We want to be your only stop for quality auto racing parts, and we recognize that our customers may need some assistance in choosing the right products. After all, nobody is born an expert.</p>
                        <p>As knowledgeable racing enthusiasts, we are happy to offer our professional advice, quotes, and assistance over the phone.</p>
-                       <p>If you need information or advice on the latest Nissan aftermarket parts, or if you have any questions at all, please feel free to give our friendly experts a call at (352) 241-8399.</p>
+                       <p>If you need information or advice on the latest Nissan aftermarket parts, or if you have any questions at all, please feel free to give our friendly experts a call at <a href="tel:3522418399">(352) 241-8399</a> or send us an email at <a href="mailto:questions@enjukuracing.com?subject={{product.title}}">questions@enjukuracing.com</a></p>
+                       <h6>Working Hours:</h6>
                        <ul>
-                            <li>Working Hours:</li>
-                            <li>Monday 11am-12:30 (lunch) 1:30-5pm</li>
-                            <li>Tuesday 10am-12:30 / 1:30-5pm</li>
-                            <li>Wednesday 10am-12:30 / 1:30-5pm</li>
-                            <li>Thursday 10am-12:30 / 1:30-5pm</li>
-                            <li>Friday 10am-12:30 / 1:30-5pm</li>
+                            <li>Monday  11AM - 5PM EST</li>
+                            <li>Tuesday - Friday 10AM - 5PM EST</li>
+                            <li>Closed for lunch daily, 12:30PM - 1:30PM EST</li>
                        </ul>
                     </div>
                 </div>
-                <p>For queries contact our experts - <a href="tel:(352) 241-8399">(352) 241-8399</a></p>
-                <p><a href="mailto:questions@enjukuracing.com">questions@enjukuracing.com</a></p>
+                <p>Questions? Contact our experts at <a href="tel:3522418399">(352) 241-8399</a> or <a href="mailto:questions@enjukuracing.com?subject={{product.title}}">send us an email.</a></p>
             </div>
 
 

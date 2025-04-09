@@ -58,3 +58,16 @@
     display: flex;
     gap: 10px;
 }
+
+
+
+@media (max-width: 1600px) {
+    .et-sticky-cart__image {
+        min-width: 60px;
+        img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+        }
+    }
+}
