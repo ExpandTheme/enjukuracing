@@ -403,33 +403,57 @@ buttonMinus.on("click", function(){
 });
 
 
-$('[data-ajax-cart]').on("click", function(event){
+$('[data-ajax-cart]').on("click", function(event) {
     event.preventDefault();
-    $(this).addClass("active");
-    var form = $(this).parent().parent();
-    var url = form.attr('action');
+ 
+    const $button = $(this);
+    $button.addClass("active");
+ 
+    const $form = $button.closest("form");
+    const url = $form.attr('action');
+ 
+    const formData = $form.serializeArray();
+    const dataToSend = {};
+ 
+    formData.forEach(field => {
+        if (field.name === 'et_product_id') {
+            dataToSend['product_id'] = field.value;
+        } else {
+            dataToSend[field.name] = field.value;
+        }
+    });
+ 
     $.ajax({
         type: "POST",
         url: url,
-        data: form.serialize(),
-        success: function(data) {
+        data: $.param(dataToSend),
+        success: function(response) {
+            console.log("Product added to cart:", response);
+ 
             fetch('/api/storefront/cart', {
                 credentials: 'include'
-            }).then(function(response) {
-                return response.json();
-            }).then(function(data) {
-                var num = 0;
-                for (let i = 0; i < data[0].lineItems.physicalItems.length; i++) {
-                    num += data[0].lineItems.physicalItems[i].quantity;
-                };
+            })
+            .then(res => res.json())
+            .then(cartData => {
+                let quantity = 0;
+                const physicalItems = cartData[0]?.lineItems?.physicalItems || [];
+ 
+                physicalItems.forEach(item => {
+                    quantity += item.quantity;
+                });
+ 
                 $('.et-ajax-cart-button').removeClass("active");
-                $('.cart-quantity').addClass("countPill--positive");
-                $(".cart-quantity").html(num);
-                console.log(num);
-				$("[data-cart-preview]").trigger("click");
+                $('.cart-quantity').addClass("countPill--positive").html(quantity);
+                $("[data-cart-preview]").trigger("click");
+            })
+            .catch(error => {
+                console.error("Cart fetch failed:", error);
             });
         },
-        error: function(data) {}
+        error: function(xhr) {
+            console.error("Add to cart failed:", xhr.responseText);
+            $button.removeClass("active");
+        }
     });
 });
 
