@@ -311,15 +311,34 @@
     align-items: center;
     justify-content: space-between;
     svg {
+        width: auto;
+        height: 45px;
+        
+    }
+}
+
+.et-sidebar-category-close {
+    svg {
         width: 18px;
         height: 18px;
         fill: #555;
     }
 }
 
-
 @media (max-width: 768px) {
     .et-sidebar-category {
         width: 80%;
+    }
+    .et-sidebar-category-logo {
+        svg {
+            width: auto;
+            height: 40px;
+        }
+    }
+    .et-sidebar-category-close {
+        svg {
+            width: 16px;
+            height: 16px;
+        }
     }
 }

@@ -24,6 +24,10 @@
         font-size: 14px;
         font-weight: 500;
         border-bottom: 2px solid transparent;
+        color: #333;
+        &:hover {
+            text-decoration: none;
+        }
         &.active{
             border-color: #000;
             color: #000;

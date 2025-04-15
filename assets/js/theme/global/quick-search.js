@@ -11,11 +11,11 @@ export default function () {
     const stencilDropDownExtendables = {
         hide: () => {
             $quickSearchExpand.attr('aria-expanded', false);
-            $searchQuery.trigger('blur');
+            //$searchQuery.trigger('blur');
         },
         show: (event) => {
             $quickSearchExpand.attr('aria-expanded', true);
-            $searchQuery.trigger('focus');
+            //$searchQuery.trigger('focus');
             event.stopPropagation();
         },
     };
@@ -39,6 +39,10 @@ export default function () {
                 return false;
             }
 
+            if(response){
+                $(".loaders").hide();
+            }
+
             $quickSearchResults.html(response);
             const $quickSearchResultsCurrent = $quickSearchResults.filter(':visible');
 
@@ -48,6 +52,7 @@ export default function () {
                     role: 'status',
                     'aria-live': 'polite',
                 });
+
             } else {
                 const $quickSearchAriaMessage = $quickSearchResultsCurrent.next();
                 $quickSearchAriaMessage.addClass('u-hidden');

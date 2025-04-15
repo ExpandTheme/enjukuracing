@@ -522,3 +522,17 @@ function toggleSearch() {
 $(document).ready(toggleSearch);
 
 $(window).resize(toggleSearch);
+
+
+$('#nav-menu-quick-search').on('keyup', function(){
+    var val = $(this).val();
+    console.log(val);
+
+    if (val.length > 2) {
+        $(".loaders").show();
+        $(".quickSearchResults").show();
+    } else {
+        $(".loaders").hide();
+        $(".quickSearchResults").hide();
+    }
+});

@@ -1,3 +1,5 @@
+{{!--
+
 {{#if product_results.products}}
     {{> components/common/modal/modal-close-btn additional_attr='data-drop-down-close'}}
     <ul class="productGrid" data-list-name="Quick Search Results">
@@ -20,3 +22,40 @@
         {{{lang 'search.results.quick_count' count=pagination.product_results.total search_query=(sanitize forms.search.query) }}}
     </p>
 {{/if}}
+
+
+--}}
+
+
+{{#if product_results.products}}
+<div class="quickSearchResults__inner">
+    <ul class="et-quick-search-product" {{#if settings.data_tag_enabled}} data-list-name="Quick Search Results" {{/if}}>
+        {{#each product_results.products}}
+            {{> components/products/quick-search-card
+                settings=../settings
+                alternate=true
+                show_compare=../show_compare
+                theme_settings=../theme_settings
+                customer=../customer
+                event="list"
+                position=(add @index 1)
+            }}
+        {{/each}}
+    </ul>
+    <a id="et-search-tigger" href="#">View All</a>
+</div>
+   
+{{else}}
+    <p class="quickSearchMessage">
+        {{{lang 'search.results.quick_count' count=pagination.product_results.total search_query=(sanitize forms.search.query) }}}
+    </p>
+{{/if}}
+
+
+<script>
+    document.getElementById("et-search-tigger").addEventListener("click", myFunction);
+    function myFunction() {
+        document.getElementById("et-search_btn").click();
+    }
+    
+</script>

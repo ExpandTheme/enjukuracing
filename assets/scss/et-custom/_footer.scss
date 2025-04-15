@@ -12,6 +12,13 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    li a {
+        color: #333;
+    }
+    li:hover a {
+        color: #e50119;
+        text-decoration: none;
+    }
 }
 .et-widget-menu--2col{
     overflow: hidden;
@@ -57,6 +64,13 @@
         position: relative;
         padding-left: 30px;
     }
+    a {
+        color: #333;
+        &:hover {
+            text-decoration: none;
+            color: #e50119;
+        }
+    }
     svg{
         width: 20px;
         height: 20px;
@@ -72,7 +86,10 @@
 .et-footer-logo{
     margin-bottom: 20px;
     display: inline-block;
-    img{
+    [data-header-logo-link] {
+        display: block;
+    }
+    svg,img {
         height: 55px;
         width: auto;
     }
@@ -109,6 +126,13 @@
             left: 0;
             content: "";
             top: 10px;
+        }
+        a {
+            color: #333;
+            &:hover {
+                text-decoration: none;
+                color: #e50119;
+            }
         }
     }  
 }
@@ -204,6 +228,12 @@
 }
 
 @media (max-width: 768px) {
+    .et-footer-logo {
+        svg {
+            width: auto;
+            height: 40px;
+        }
+    }
     .et-footer {
         display: block;
     }

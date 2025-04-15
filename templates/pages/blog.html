@@ -1,7 +1,7 @@
 ---
 blog:
     posts:
-        limit: 5
+        limit: 6
         pages: 3
         summary: 200
 ---
@@ -16,19 +16,25 @@ blog:
 
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<div class="et-breadcrumbs et-breadcrumbs--cartpage">
+    <div class="et-container">
+        {{#unless theme_settings.hide_blog_page_heading }}
+            <h1 class="page-heading">{{ blog.name }}</h1>
+        {{/unless}}
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+    </div>
+</div>
 
-<main class="page">
-    {{#unless theme_settings.hide_blog_page_heading }}
-        <h1 class="page-heading">{{ blog.name }}</h1>
-    {{/unless}}
-
-    {{#each blog.posts}}
-        {{> components/blog/post post=this theme_settings=../theme_settings}}
-    {{/each}}
-
-    {{> components/common/paginator pagination.blog}}
-</main>
+<section class="et-blog-page et-section-margin">
+    <div class="et-container">
+        <div class="et-blog-card-wrap">
+            {{#each blog.posts}}
+                {{> components/blog/post post=this theme_settings=../theme_settings}}
+            {{/each}}
+        </div>
+        {{> components/common/paginator pagination.blog}}
+    </div>
+</section>
 
 {{/partial}}
 {{> layout/base}}

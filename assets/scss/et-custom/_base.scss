@@ -24,6 +24,13 @@ h1, h2, h3, h4, h5, h6{
 }
 a{
     text-decoration: none;
+    color: #e50119;
+    transition: all 300ms ease;
+    &:hover {
+        color: #e50119;
+        transition: all 300ms ease;
+        text-decoration: underline;
+    }
 }
 *:focus {
     outline: none !important;

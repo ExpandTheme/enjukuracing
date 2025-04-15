@@ -48,3 +48,140 @@
         }
     }
 }
+
+
+
+
+
+
+
+.quickSearchResults {
+    &:empty {
+        display: none;
+    }
+    .quickSearchMessage {
+        font-size: 28px;
+        margin: 1.5rem 0 0;
+        text-align: center;
+        background: white;
+        position: absolute;
+        top: 23px;
+        width: 100%;
+        z-index: 99;
+        font-size: 16px;
+        padding: 19px;
+    }
+}
+.quickSearchResults__inner {
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: 400px;
+    overflow-y: scroll;
+    border-radius: 0 0 4px 4px;
+    z-index: 99;
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #cbcbcb;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: #b9b9b9;
+    }
+    #et-search-tigger {
+        position: sticky;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background: #ebebeb;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 500;
+    }
+}
+.et-quick-search-product {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.et-quick-search-product__item {
+    a {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        border-bottom: 1px solid #e8e8e8;
+        padding: 10px 30px;
+        gap: 10px;
+        align-items: center;
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+            background-color: #f4f4f4;
+            .et-card__brand{
+                background-color: #fff;
+            }
+        }
+    }
+}
+.et-quick-search-product__item-left {
+    text-align: center;
+    img {
+        height: 80px;
+        width: auto;
+    }
+}
+.et-quick-search-title {
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.et-quick-search-price{
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    line-height: 1;
+}
+
+.loaders {
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    top: 7px;
+    right: 55px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(#7d7d7d 30px, transparent 0), linear-gradient(#7d7d7d 30px, transparent 0),
+        linear-gradient(#7d7d7d 30px, transparent 0), linear-gradient(#7d7d7d 30px, transparent 0),
+        linear-gradient(#7d7d7d 30px, transparent 0), linear-gradient(#7d7d7d 30px, transparent 0);
+    background-position: 0px center, 7px center, 15px center, 20px center, 25px center, 30px center, 35px center;
+    animation: rikSpikeRoll 0.65s linear infinite alternate;
+    display: none;
+}
+@keyframes rikSpikeRoll {
+    0% {
+        background-size: 2px 3px;
+    }
+    16% {
+        background-size: 2px 10px, 2px 3px, 2px 3px, 2px 3px, 2px 3px, 2px 3px;
+    }
+    33% {
+        background-size: 2px 20px, 2px 10px, 2px 3px, 2px 3px, 2px 3px, 2px 3px;
+    }
+    50% {
+        background-size: 2px 2px, 2px 20px, 2px 10px, 2px 3px, 2px 3px, 2px 3px;
+    }
+    66% {
+        background-size: 2px 3px, 2px 2px, 2px 20px, 2px 10px, 2px 3px, 2px 3px;
+    }
+    83% {
+        background-size: 2px 3px, 2px 3px, 2px 2px, 2px 20px, 2px 10px, 2px 3px;
+    }
+    100% {
+        background-size: 2px 3px, 2px 3px, 2px 3px, 2px 2px, 2px 20px, 2px 10px;
+    }
+}

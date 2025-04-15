@@ -1,0 +1,94 @@
+<li class="et-quick-search-product__item">
+    <a href="{{url}}">
+    
+        <div class="et-quick-search-product__item-left">
+            {{> components/common/responsive-img
+                image=image
+                class="et-card-image"
+                fallback_size=theme_settings.productgallery_size
+                lazyload=theme_settings.lazyload_mode
+                default_image=theme_settings.default_image_product
+            }}
+            {{#if stock_level '===' 0}}
+                    {{#if show_cart_action}}
+                        {{#if theme_settings.pdp_sold_out_label '===' ''}}
+                            {{> components/products/product-badge
+                                badge-type='sold-out'
+                                badge_view=theme_settings.product_sold_out_badges
+                                badge_label=(lang "page_builder.pdp_sold_out_label")
+                            }}
+                        {{else}}
+                            {{> components/products/product-badge
+                                badge-type='sold-out'
+                                badge_view=theme_settings.product_sold_out_badges
+                                badge_label=theme_settings.pdp_sold_out_label
+                            }}
+                        {{/if}}
+                    {{/if}}
+                {{else if has_options '===' false}}
+                    {{#and (if stock_level '===' null) show_cart_action}}
+                        {{#and (unless add_to_cart_url) (unless pre_order)}}
+                            {{#if theme_settings.pdp_sold_out_label '===' ''}}
+                                {{> components/products/product-badge
+                                    badge-type='sold-out'
+                                    badge_view=theme_settings.product_sold_out_badges
+                                    badge_label=(lang "page_builder.pdp_sold_out_label")
+                                }}
+                            {{else}}
+                                {{> components/products/product-badge
+                                    badge-type='sold-out'
+                                    badge_view=theme_settings.product_sold_out_badges
+                                    badge_label=theme_settings.pdp_sold_out_label
+                                }}
+                            {{/if}}
+                        {{/and}}
+                    {{/and}}
+                {{else}}
+                    {{#or price.sale_price_with_tax.value price.sale_price_without_tax.value}}
+                        {{#if theme_settings.pdp_sale_badge_label '===' ''}}
+                            {{> components/products/product-badge
+                                badge-type='sale'
+                                badge_view=theme_settings.product_sale_badges
+                                badge_label=(lang "page_builder.pdp_sale_badge_label")
+                            }}
+                        {{else}}
+                            {{> components/products/product-badge
+                                badge-type='sale'
+                                badge_view=theme_settings.product_sale_badges
+                                badge_label=theme_settings.pdp_sale_badge_label
+                            }}
+                        {{/if}}
+                    {{/or}}
+                {{/if}}
+        </div>
+    
+        <div class="et-quick-search-product__item-right">
+            {{#if brand.name}}
+                <p class="et-card-text" data-test-info-type="brandName">
+                    <spn class="et-card__brand">{{brand.name}}</spn>
+                </p>
+            {{/if}}
+            <!-- {{#if out_of_stock_message}}
+                <p class="et-card-text--availability unavilable"><svg><use xlink:href="#icon-x"></svg>Availability: Out of Stock</p>
+            {{else}}
+                <p class="et-card-text--availability avilable"><svg><use xlink:href="#icon-check-mark"></svg>Availability: In Stock</p>
+            {{/if}} -->
+            {{#and rating show_rating}}
+                <p class="et-card-text" data-test-info-type="productRating">
+                    <span class="rating--small">
+                        {{> components/products/ratings rating_target=name rating=rating}}
+                    </span>
+                </p>
+            {{/and}}
+            <h4 class="et-quick-search-title">{{name}}</h4>
+            <div class="et-quick-search-price" data-test-info-type="price">
+                {{#or customer (unless settings.hide_price_from_guests)}}
+                    {{> components/products/price price=price}}
+                {{else}}
+                    login for pricing
+                {{/or}}
+            </div>
+        </div>
+    
+    </a>
+</li>

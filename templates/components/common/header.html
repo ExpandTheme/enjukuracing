@@ -13,7 +13,9 @@
         <div class="et-container">
             <div class="et-header">
                 {{> components/common/store-logo}}
-                {{> components/common/quick-search}}
+                <div class="et-header-search">
+                    {{> components/et-custom/quick-search name='nav-menu-quick-search'}}
+                </div>
                 {{> components/common/navigation}} 
             </div>
         </div>
