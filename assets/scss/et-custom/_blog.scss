@@ -33,6 +33,35 @@
     }
 }
 
+.blog-header {
+    h2 {
+        line-height: normal;
+        font-weight: 400;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+.et-blog-detail-thumbnail {
+    margin: 0;
+    margin-bottom: 24px;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.et-blog-detail-header {
+    h1 {
+        font-weight: 500;
+    }
+}
+
+
+
+
+
 
 @media (max-width: 768px) {
     .et-blog-card-wrap {
