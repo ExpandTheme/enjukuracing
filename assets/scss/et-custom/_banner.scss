@@ -13,6 +13,9 @@
         height: 100%;
         object-fit: cover;
     }
+    img.mobile-banner {
+        display: none;
+    } 
 }
 .et-banner-item__content{
     position: absolute;
@@ -71,10 +74,20 @@
     .et-main-banner {
         display: block;
     }
+    .et-banner-item__image {
+        img.mobile-banner {
+            display: block;
+        }
+        img.desktop-banner {
+            display: none;
+        }
+    }
     .et-banner-item {
+        background: #fff;
         &__content {
-            position: relative;
-            top: unset;
+            width: 100%;
+            text-align: center;
+            top: 0;
             transform: unset;
             left: unset;
             padding: 24px;
@@ -88,6 +101,9 @@
             p {
                 font-size: 16px;
             }
+        }
+        &__image {
+            padding-top: 120px;
         }
     }
 }
