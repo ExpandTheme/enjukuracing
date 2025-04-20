@@ -173,7 +173,8 @@ blog:
             <div class="et-section-title">
                 <h2>4 Reasons To Choose Us</h2>
             </div>
-            <div>
+            <div class="et-choose-us-wrap">
+                {{{region name="et_choose_us"}}}
                 <div class="et-choose-us-item">
                     <div class="et-choose-us-item__image">
                         <img src="https://cdn11.bigcommerce.com/s-79xyvl/product_images/uploaded_images/professional-advice.png" alt="">
@@ -229,7 +230,7 @@ blog:
         </div>
     </section>
 
-    {{{region name="et_choose_us"}}}
+    
 
     <section class="et-shopnow-section">
         <div class="et-container">
@@ -297,6 +298,8 @@ blog:
                     <h2>What Our <br> Customers Are Saying</h2>
                     <p>4.8 out of 5 stars on website</p>
                 </div>
+                {{{region name="et_testimonial"}}}
+                {{!--
                 <div class="et-testimonial-reviews" data-testimonial-slide>
                     <div class="et-testimonial-reviews__item">
                         <h3 class="et-testimonial-reviews__heading">Quality Arms And Great Price!</h3>
@@ -359,11 +362,12 @@ blog:
                         </div>
                     </div>
                 </div>
+                --}}
             </div>
         </div>
     </section>
 
-    {{{region name="et_testimonial"}}}
+    
 
 {{/partial}}
 {{> layout/base}}

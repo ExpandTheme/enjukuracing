@@ -4,39 +4,45 @@ brands:
 
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<div class="et-breadcrumbs et-breadcrumbs--cartpage">
+    <div class="et-container">
+        <h1 class="page-heading">{{lang 'brand.label'}}</h1>
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        {{{region name="brands_below_header"}}}
+    </div>
+</div>
 
-<main class="page">
-    <h1 class="page-heading">{{lang 'brand.label'}}</h1>
-    {{{region name="brands_below_header"}}}
-    <ul class="brandGrid">
-        {{#each brands}}
-            <li class="brand">
-                <article class="card {{#if alternate}}card--alternate{{/if}}">
-                    <figure class="card-figure">
-                        <a class="card-figure__link" aria-label="{{name}}" href="{{url}}">
-                            <div class="card-img-container">
-                                {{> components/common/responsive-img
-                                    image=image
-                                    class="card-image"
-                                    fallback_size=../theme_settings.brand_size
-                                    lazyload=../theme_settings.lazyload_mode
-                                    default_image=../theme_settings.default_image_brand
-                                }}
-                            </div>
-                        </a>
-                    </figure>
-                    <div class="card-body">
-                        <h3 class="card-title">
-                            <a href="{{url}}">{{name}}</a>
-                        </h3>
-                    </div>
-                </article>
-            </li>
-        {{/each}}
-    </ul>
-    {{> components/common/paginator pagination.brands}}
-    {{{region name="brands_below_content"}}}
-</main>
+<section class="et-brand-page et-section-margin">
+    <div class="et-container">
+        <ul class="et-brandGrid">
+            {{#each brands}}
+                <li class="et-brand-item">
+                    <article class="et-brand-card {{#if alternate}}card--alternate{{/if}}">
+                        <figure class="et-brand-card-figure">
+                            <a class="et-brand-card-figure__link" aria-label="{{name}}" href="{{url}}">
+                                <div class="et-brand-card-img-container">
+                                    {{> components/common/responsive-img
+                                        image=image
+                                        class="et-brand-card-image"
+                                        fallback_size=../theme_settings.brand_size
+                                        lazyload=../theme_settings.lazyload_mode
+                                        default_image=../theme_settings.default_image_brand
+                                    }}
+                                </div>
+                            </a>
+                        </figure>
+                        <div class="et-brand-card-body">
+                            <h3 class="card-title">
+                                <a href="{{url}}">{{name}}</a>
+                            </h3>
+                        </div>
+                    </article>
+                </li>
+            {{/each}}
+        </ul>
+        {{> components/common/paginator pagination.brands}}
+        {{{region name="brands_below_content"}}}
+    </div>
+</section>
 {{/partial}}
 {{> layout/base}}
