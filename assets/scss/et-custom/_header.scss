@@ -177,6 +177,19 @@
 }
 
 
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .et-navigation-top__list-link {
+        font-size: 14px;
+    }
+    .et-header {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .et-header-logo svg {
+        height: 40px;
+    }
+}
+
 @media (max-width: 768px) {
     .et-header-top-section {
         display: none;

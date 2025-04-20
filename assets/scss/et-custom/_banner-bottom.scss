@@ -9,11 +9,20 @@
         font-size: 34px;
         font-weight: 600;
         text-transform: uppercase;
+        line-height: normal;
     }
     p{
         margin: 0;
     }
 }
+
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .et-banner-bottom {
+        padding: 0 50px;
+    }
+}
+
 
 @media (max-width: 768px) {
     .et-banner-bottom-section {
