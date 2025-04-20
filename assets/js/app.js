@@ -346,6 +346,14 @@ $('.et-select-vehicle-tab-nav a').on("click", function(e){
 
 
 
+$('[data-main-slider]').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+	dots: true
+});
+
+
 $('[data-testimonial-slide]').slick({
     infinite: true,
     slidesToShow:2,
@@ -536,3 +544,5 @@ $('#nav-menu-quick-search').on('keyup', function(){
         $(".quickSearchResults").hide();
     }
 });
+
+

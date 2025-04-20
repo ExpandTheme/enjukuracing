@@ -2,6 +2,20 @@
     display: grid;
     grid-template-columns: 1fr 450px;
 }
+
+.et-main-banner-wrap {
+    margin-bottom: 0 !important;
+    .slick-arrow.slick-prev {
+        left: 20px !important;
+    }
+    .slick-arrow.slick-next {
+        right: 20px !important;
+    }
+    .slick-dots {
+        bottom: 10px !important;
+    }
+}
+
 .et-banner-item{
    position: relative;
    height: 100%;
@@ -87,6 +101,10 @@
             transform: unset;
             left: unset;
             padding: 24px;
+            .brand-logo {
+                text-align: center;
+                text-align: -webkit-center;
+            }
             .brand-logo img {
                 width: auto;
                 height: 60px;
