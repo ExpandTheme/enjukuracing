@@ -6,6 +6,7 @@ import modalFactory from '../global/modal';
 import collapsibleFactory from './collapsible';
 import { Validators } from './utils/form-utils';
 import nod from './nod';
+import InfiniteScroll from 'infinite-scroll';
 
 
 const defaultOptions = {
@@ -319,6 +320,7 @@ class FacetedSearch {
         hooks.on('facetedSearch-facet-clicked', this.onFacetClick);
         hooks.on('facetedSearch-range-submitted', this.onRangeSubmit);
         hooks.on('sortBy-submitted', this.onSortBySubmit);
+        this.infiniteScroll();
     }
 
     unbindEvents() {
@@ -334,6 +336,20 @@ class FacetedSearch {
         hooks.off('facetedSearch-facet-clicked', this.onFacetClick);
         hooks.off('facetedSearch-range-submitted', this.onRangeSubmit);
         hooks.off('sortBy-submitted', this.onSortBySubmit);
+        this.infiniteScroll();
+    }
+
+    infiniteScroll() {
+        const elem = document.querySelector('.et-productGrid--search');
+        const infScroll = new InfiniteScroll(elem, {
+        // options
+            path: '.pagination-item--next .pagination-link',
+            append: '.et-product',
+            history: false,
+            loadOnScroll: true,
+            status: '.page-load-status'
+        });
+        return infScroll;
     }
 
     onClearFacet(event) {

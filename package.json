@@ -14,6 +14,7 @@
     "focus-within-polyfill": "^5.1.0",
     "formdata-polyfill": "^3.0.20",
     "foundation-sites": "^5.5.3",
+    "infinite-scroll": "^5.0.0",
     "jquery": "^3.6.1",
     "jquery-custom-select": "^1.6.4",
     "jstree": "^3.3.12",

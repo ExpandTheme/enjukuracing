@@ -5,10 +5,18 @@
 {{/if}}
 <div data-list-name="Search Results">
     {{#if theme_settings.product_list_display_mode '===' 'grid'}}
-        {{> components/products/grid products=product_results.products show_compare=product_results.show_compare event="list" theme_settings=theme_settings}}
+        {{> components/products/grid products=product_results.products et_grid_class="et-productGrid--search" show_compare=product_results.show_compare event="list" theme_settings=theme_settings}}
     {{else}}
-        {{> components/products/list products=product_results.products show_compare=product_results.show_compare event="list" theme_settings=theme_settings}}
+        {{> components/products/list products=product_results.products et_grid_class="et-productGrid--search" show_compare=product_results.show_compare event="list" theme_settings=theme_settings}}
     {{/if}}
 </div>
 
+
+<div class="page-load-status">
+    <div class="infinite-scroll-request">
+        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+    <p class="infinite-scroll-last">No more pages to load</p>
+    <p class="infinite-scroll-error">No more pages to load</p>
+</div>
 {{> components/common/paginator pagination.product_results}}
