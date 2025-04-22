@@ -23,11 +23,7 @@
                 {{#if product.release_date }}
                     <p>{{product.release_date}}</p>
                 {{/if}}
-                {{#if product.call_for_price}}
-                    <div class="et-call-for-pricing">
-                        <a href="mailto:questoins@enjukuracing.com?subject={{product.title}}" class="et-button et-button--secondary et-button--large"><span>{{product.call_for_price}}</span></a>
-                    </div>
-                {{else}}
+                {{#if product.can_purchase}}
                     <form method="post" action="{{product.cart_url}}" enctype="multipart/form-data">
                         <input type="hidden" name="action" value="add">
                         <input type="hidden" name="product_id" value="{{product.id}}"/>
@@ -50,6 +46,18 @@
                             </button>
                         </div>
                     </form>
+                {{else}}
+                    <div class="et-call-for-pricing">
+                        <a href="mailto:questoins@enjukuracing.com?subject={{product.title}}" class="et-button et-button--secondary et-button--large">
+                            <span>
+                                {{#if product.call_for_price}}
+                                    {{product.call_for_price}}
+                                {{else}}
+                                    Please Call or Email to Order
+                                {{/if}}
+                            </span>
+                        </a>
+                    </div>
                 {{/if}}
             </div>
         </div>

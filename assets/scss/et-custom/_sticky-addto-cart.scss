@@ -20,7 +20,8 @@
     min-width: 100px;
     img{
         width: 100%;
-        height: auto;
+        height: 60px;
+        object-fit: cover;
     }
 }
 .et-sticky-cart{
