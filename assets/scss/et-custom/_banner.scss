@@ -85,6 +85,12 @@
     .et-main-banner {
         display: block;
     }
+
+    .et-main-banner-wrap {
+        max-height: 431px;
+        overflow: hidden;
+    }
+
     .et-banner-item__image {
         img.mobile-banner {
             display: block;
