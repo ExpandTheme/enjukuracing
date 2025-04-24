@@ -106,4 +106,16 @@
     .et-testimonial-reviews .slick-arrow.slick-next{
         right: 0 !important;
     }
+
+    .et-testimonial-header {
+        text-align: center;
+        h2 {
+            font-size: 28px;
+            line-height: 130%;
+        }
+    }
+    .et-testimonial-reviews {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }

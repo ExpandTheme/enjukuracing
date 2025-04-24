@@ -60,6 +60,14 @@
         grid-template-columns: 1fr 380px;
         min-height: 350px;
     }
+    .et-banner-item__image {
+        img {
+            min-height: 350px;
+        }
+    }
+    .et-main-banner-wrap {
+        max-height: 350px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1199.98px) {
@@ -69,9 +77,16 @@
     }
     .et-banner-item__content {
         width: 40%;
+        left: 12%;
         .brand-logo img {
             width: auto;
-            height: 70px;
+            height: 55px;
+        }
+        h2 {
+            font-size: 28px;
+        }
+        p {
+            font-size: 16px;
         }
     }
     .et-banner-item {
@@ -79,6 +94,12 @@
     }
     .et-banner-item__image {
         height: 100%;
+        img {
+            min-height: 300px;
+        }
+    }
+    .et-main-banner-wrap {
+        max-height: 300px;
     }
 }
 
