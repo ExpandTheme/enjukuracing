@@ -18,6 +18,9 @@
         a.productView-thumbnail-link{
             margin: 0;
             padding: 0;
+            img {
+                object-fit: contain;
+            }
         }
     }
 }

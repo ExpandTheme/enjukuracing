@@ -49,3 +49,38 @@ product:
 
 {{/partial}}
 {{> layout/base}}
+
+
+  <script type="text/javascript">
+    var _learnq = _learnq || [];
+    var product_categories = [];
+    {{#each product.category}}
+      product_categories.push('{{this}}');
+    {{/each}}
+  
+    var item = {
+      Name: "{{product.title}}",
+      ProductID: "{{product.id}}",
+      ImageURL: "{{getImage product.main_image 'product_size' (cdn theme_settings.default_image_product)}}",
+      URL: "{{product.url}}",
+      Brand: "{{product.brand.name}}",
+      Categories: product_categories,
+      Price: "{{product.price.without_tax.value}}",
+      CompareAtPrice: "{{product.price.rrp_without_tax.value}}"
+    };
+  
+    _learnq.push(['track', 'Viewed Product', item]);
+    _learnq.push(['trackViewedItem', {
+      Title: item.Name,
+      ItemId: item.ProductID,
+      Categories: item.Categories,
+      ImageUrl: item.ImageURL,
+      Url: item.URL,
+      Metadata: {
+        Brand: item.Brand,
+        Price: item.Price,
+        CompareAtPrice: item.CompareAtPrice
+      }
+    }]);
+  </script>
+  
