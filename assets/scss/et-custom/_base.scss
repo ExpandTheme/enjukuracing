@@ -51,6 +51,10 @@ a{
     overflow: hidden !important;
 }
 
+.et-pointer-event-disabled {
+  pointer-events: none !important;
+}
+
 .et-section-padding {
     padding: 50px 0;
 }

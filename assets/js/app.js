@@ -546,3 +546,15 @@ $('#nav-menu-quick-search').on('keyup', function(){
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.productView-img-container > a');
+    elements.forEach(el => {
+        el.classList.add('et-pointer-event-disabled');
+    });
+    
+    window.addEventListener('load', function() {
+        elements.forEach(el => {
+            el.classList.remove('et-pointer-event-disabled');
+        });
+    });
+});
