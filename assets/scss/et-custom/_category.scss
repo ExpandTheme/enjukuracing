@@ -460,6 +460,10 @@
 }
 
 @media (max-width: 768px) {
+  .et-category__left {
+    position: relative;
+    top: unset;
+  }
   .et-select-vehicle-form {
     display: block;
     .et-form-select {

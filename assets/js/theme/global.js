@@ -36,13 +36,13 @@ export default class Global extends PageManager {
 
 var fstCat = jsContext.categories;
 var ShopByVehicle = [
-    ...(fstCat[1]), 
+    ...(fstCat[0]), 
+    ...(fstCat[3]), 
     ...(fstCat[4]), 
-    ...(fstCat[5]), 
-    ...(fstCat[6]),
-    ...(fstCat[8]), 
-    ...(fstCat[9]),
-    ...(fstCat[10]?.children || [])
+    ...(fstCat[5]),
+    ...(fstCat[7]), 
+    ...(fstCat[8]),
+    ...(fstCat[9]?.children || [])
 ];
 var selectedValue = "";
 
@@ -50,6 +50,7 @@ var selectedValue = "";
 $('#resetVehicle, #resetBrand').prop("disabled", true);
 
 // Populate first dropdown (Make)
+ShopByVehicle.sort((a, b) => a.name.localeCompare(b.name));
 $.each(ShopByVehicle, function (key, value) {
     $('#make').append(`<option value="${value.url || value.id}">${value.name}</option>`);
 });
@@ -67,6 +68,7 @@ $("#make").on("change", function () {
     toggleResetVehicleButton();
 
     if (selectedCategory?.children?.length) {
+        selectedCategory.children.sort((a, b) => a.name.localeCompare(b.name));
         $.each(selectedCategory.children, function (key, value) {
             $('#model').append(`<option value="${value.url || value.id}">${value.name}</option>`).prop("disabled", false);
         });
@@ -85,6 +87,7 @@ $("#model").on("change", function () {
     toggleResetVehicleButton();
 
     if (selectedModel?.children?.length) {
+        selectedModel.children.sort((a, b) => a.name.localeCompare(b.name));
         $.each(selectedModel.children, function (key, value) {
             $('#part').append(`<option value="${value.url || value.id}">${value.name}</option>`).prop("disabled", false).show(); // Show only if options exist
         });
@@ -123,10 +126,11 @@ $("#resetVehicle").on("click", function () {
 });
 
 // Universal Part Selection
-var UniversalParts = fstCat[11]?.children[3]?.children || []; // Fetch Universal Parts
+var UniversalParts = fstCat[10]?.children[3]?.children || []; // Fetch Universal Parts
 var selectedUniversalPart = ""; // Variable to store selected universal part
 
 // Populate Universal Part dropdown
+UniversalParts.sort((a, b) => a.name.localeCompare(b.name));
 $.each(UniversalParts, function (key, value) {
     $('#universalPart').append(`<option value="${value.url || value.id}">${value.name}</option>`);
 });
@@ -160,11 +164,12 @@ $("#resetUniversal").on("click", function () {
 });
 
 // Brand and Part Selection
-var BrandParts = fstCat[12]?.children || []; // Assuming index 16 for Brand categories
+var BrandParts = fstCat[11]?.children || []; // Assuming index 16 for Brand categories
 var selectedBrand = ""; // Variable to store selected brand
 var selectedPart = ""; // Variable to store selected part
 
 // Populate Brand dropdown
+BrandParts.sort((a, b) => a.name.localeCompare(b.name));
 $.each(BrandParts, function (key, value) {
     $('#selectBrand').append(`<option value="${value.url || value.id}">${value.name}</option>`);
 });
@@ -181,6 +186,7 @@ $("#selectBrand").on("change", function () {
 
     // If the selected brand has children, populate Part dropdown
     if (selectedBrandCategory?.children?.length) {
+        selectedBrandCategory.children.sort((a, b) => a.name.localeCompare(b.name));
         $.each(selectedBrandCategory.children, function (key, value) {
             $('#selectPart').append(`<option value="${value.url || value.id}">${value.name}</option>`).prop("disabled", false).show(); // Show and enable if options exist
         });

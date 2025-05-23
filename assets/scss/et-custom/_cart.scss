@@ -138,6 +138,16 @@ strong.cart-item-value {
     align-items: center;
     gap: 15px;
     margin-bottom: 5px;
+    .free-shipping-policy {
+        margin: 0;
+        display: block;
+        width: fit-content;
+        a {
+            display: block;
+            width: fit-content;
+            white-space: nowrap;
+        }
+    }
 }
 .et-free-shipping-progress-v1__bar{
     width: 100%;
@@ -177,5 +187,31 @@ strong.cart-item-value {
 @media (max-width: 768px) {
     .et-cart-page {
         display: block;
+    }
+    .et-free-shipping-progress-v1__inner {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+        span {
+            flex: 0 0 auto;
+            width: 10%;
+            &:first-child {
+                width: 5%;
+            }
+        }
+        .et-free-shipping-progress-v1__bar {
+            flex: 0 0 auto;
+            width: 75%;
+        }
+        .free-shipping-policy {
+            width: 100%;
+            text-align: center;
+            a {
+                width: 100%;
+            }
+        }
+    }
+    .et-free-shipping-progress-v1__label {
+        text-align: center;
     }
 }

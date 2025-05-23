@@ -31,9 +31,7 @@
   padding: 10px;
   border-bottom: 1px solid #efefef;
   img{
-      height: auto;
-      max-height: 180px;
-      min-height: 180px;
+      height: 180px;
       width: 100%;
       object-fit: contain;
   }
@@ -308,6 +306,10 @@
 
 
 @media (max-width: 768px) {
+  .et-card-img-container {
+    display: block;
+    height: 190px;
+  }
   .et-card-body {
     padding: 10px;
   }
@@ -342,6 +344,8 @@
   }
   .et-card-figcaption {
     bottom: 0;
+    position: unset;
+    margin: 0;
     .quickview {
       width: 100%;
     }
