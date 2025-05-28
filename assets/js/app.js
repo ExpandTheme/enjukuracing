@@ -411,7 +411,7 @@ buttonMinus.on("click", function(){
 });
 
 
-$('[data-ajax-cart]').on("click", function(event) {
+$(document).on("click", "[data-ajax-cart]", function(event) {
     event.preventDefault();
  
     const $button = $(this);
