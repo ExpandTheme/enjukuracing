@@ -72,3 +72,18 @@
         }
     }
 }
+
+
+@media (max-width: 768px) {
+    .et-sticky-cart {
+        display: block;
+        position: relative;
+    }
+    .et-sticky-cart__content {
+        padding-left: 70px;
+    }
+    .et-sticky-cart__image {
+        position: absolute;
+        top: 5px;
+    }
+}
